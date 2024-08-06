@@ -1,0 +1,14 @@
+---
+title: "Data Wrangling"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "2-data-wrangling"
+  logitrcars: FALSE
+  formr4conjoint: FALSE
+---
+
+Coming soon!

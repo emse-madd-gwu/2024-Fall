@@ -1,0 +1,14 @@
+---
+title: "Conjoint Questions"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "6-conjoint-questions"
+  logitrcars: TRUE
+  formr4conjoint: TRUE
+---
+
+Coming soon!
