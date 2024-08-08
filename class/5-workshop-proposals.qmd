@@ -1,12 +1,12 @@
 ---
-title: "Getting Started"
+title: "Project Workshops"
 toc: false
 execute:
   echo: false
   warning: false
   message: false
 params:
-  class: "1-getting-started"
+  class: "5-workshop-proposals"
   logitrcars: FALSE
   formr4conjoint: FALSE
 ---
