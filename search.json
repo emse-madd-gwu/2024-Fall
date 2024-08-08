@@ -357,49 +357,182 @@
     "text": "Coming soon!"
   },
   {
-    "objectID": "class/4-intro-to-formr.html",
-    "href": "class/4-intro-to-formr.html",
+    "objectID": "class/5-workshop-proposals.html",
+    "href": "class/5-workshop-proposals.html",
+    "title": "Project Workshops",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/3-quarto-plotting.html",
+    "href": "class/3-quarto-plotting.html",
+    "title": "Quarto & Plotting",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/15-final-presentations.html",
+    "href": "class/15-final-presentations.html",
+    "title": "Final Presentations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/13-class-review.html",
+    "href": "class/13-class-review.html",
+    "title": "Class Review",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/11-wtp-simulation.html",
+    "href": "class/11-wtp-simulation.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/1-getting-started.html",
+    "href": "class/1-getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS PRACTICE\n Notes zip file"
+  },
+  {
+    "objectID": "self-assessment.html",
+    "href": "self-assessment.html",
+    "title": "Self Assessment",
+    "section": "",
+    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
+  },
+  {
+    "objectID": "self-assessment.html#this-assignment-is-optional",
+    "href": "self-assessment.html#this-assignment-is-optional",
+    "title": "Self Assessment",
+    "section": "",
+    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
+  },
+  {
+    "objectID": "project/examples.html",
+    "href": "project/examples.html",
+    "title": "Example Analyses",
+    "section": "",
+    "text": "As inspiration for your final projects, check out these prior exploratory data analyses.\n\nPrevious course showcases\n\n\n\n\n\nFall 2021 Showcase\nProjects from the fall 2021 semester of this class.\n\n\n\n\n\n\n\nFall 2022 Showcase\nProjects from the fall 2022 semester of this class.",
+    "crumbs": [
+      "Final Project",
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "hw/9-wtp-simulation.html",
+    "href": "hw/9-wtp-simulation.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/7-uncertainty.html",
+    "href": "hw/7-uncertainty.html",
+    "title": "Uncertainty",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/5-utility-models.html",
+    "href": "hw/5-utility-models.html",
+    "title": "Utility Models",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/3-intro-to-formr.html",
+    "href": "hw/3-intro-to-formr.html",
     "title": "Intro to formr",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "class/2-data-wrangling.html",
-    "href": "class/2-data-wrangling.html",
-    "title": "Data Wrangling",
+    "objectID": "hw/11-exam.html",
+    "href": "hw/11-exam.html",
+    "title": "Exam",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "class/14-story-telling.html",
-    "href": "class/14-story-telling.html",
-    "title": "Story Telling",
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Licensing and copyright information",
     "section": "",
-    "text": "Coming soon!"
+    "text": "The course material is licensed under the Creative Commons Attribution 4.0 International License and the course code is licensed under a MIT License by John Helveston.",
+    "crumbs": [
+      "Other",
+      "License"
+    ]
   },
   {
-    "objectID": "class/12-heterogeneity.html",
-    "href": "class/12-heterogeneity.html",
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "You should install and set everything here before the first day of class.\n\n\nSign up for Slack. You should have been sent a link to join in the course intro email. If not, email Professor Helveston for an invite link. Use your @gwu.edu email to sign up.\nInstall the Slack app on your phone and Turn notifications on!. I’ll send all course communication via Slack, so please make sure your notifications are on so you don’t miss anything.\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nIf you have a Mac, install XQuartz. This is needed for making some figures and is only for Mac (if you’re on Windows or Linux, skip this step).\nDownload and install Quarto\nSign up for Posit Cloud1 (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\nYou’ll need to install some R packages in RStudio that we will use throughout the semester. To do so, open RStudio then copy-paste this code into the console and press Return. This will install all the packages listed in the file.\n\nThat’s it - you’re all set for class!",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#footnotes",
+    "href": "software.html#footnotes",
+    "title": "Software",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“Posit” is the company that makes “RStudio”, the software we’ll use to work with R.↩︎",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "hw/10-heterogeneity.html",
+    "href": "hw/10-heterogeneity.html",
     "title": "Heterogeneity",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "class/10-doe-power-analysis.html",
-    "href": "class/10-doe-power-analysis.html",
-    "title": "DOE & Power Analysis",
+    "objectID": "hw/2-quarto-plotting.html",
+    "href": "hw/2-quarto-plotting.html",
+    "title": "Quarto & Plotting",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "hw/4-conjoint-questions.html",
+    "href": "hw/4-conjoint-questions.html",
+    "title": "Conjoint Surveys in formr",
     "section": "",
-    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nThis course was first created by Dr. John Paul Helveston at the George Washington University for the Spring 2019 semester of EMSE 6035, which was previously called Marketing of Technology. See the LICENSE page for information about reusing and sharing content.",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/6-optimization-mle.html",
+    "href": "hw/6-optimization-mle.html",
+    "title": "Optimization & MLE",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/8-doe-power-analysis.html",
+    "href": "hw/8-doe-power-analysis.html",
+    "title": "Design of Experiment",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "project/0-overview.html",
+    "href": "project/0-overview.html",
+    "title": "Project Overview",
+    "section": "",
+    "text": "Throughout the semester, you will work in teams of 3-4 students towards a final project. The project will have three phases:\n\nProject proposal\nPilot survey & analysis\nFinal survey & analysis\n\nTeams will apply topics covered in class to develop quantitative models of consumer choice to inform design decisions for a novel product, technology, or policy. Each team will have somewhat different tasks and areas of emphasis, depending on the product selected; however, all projects will be expected to demonstrate mastery of the topics covered in class and to address the criteria and guidelines required for project assignments.\nSummary of Deliverables: To make the overall project more manageable, it is broken down into separate “milestone” deliverables due throughout the semester, starting with a proposal.\n\n\n\n\nItem\nWeight towardsfinal grade\nDue Date(by 11:59pm)\n\n\n\n\nProject Proposal\n5 %\nSep. 24\n\n\nSurvey Plan\n5 %\nOct. 03\n\n\nPilot Survey\n5 %\nOct. 17\n\n\nPilot Analysis\n5 %\nNov. 05\n\n\nFinal Survey\n5 %\nNov. 19\n\n\nFinal Analysis Report\n15 %\nDec. 10\n\n\nFinal Presentation\n5 %\nDec. 12\n\n\n\n\n\nProject Selection\nI want this project to be as useful for you and your future career as possible - you’ll hopefully want to show off your final project in a portfolio or during job interviews. Accordingly, you get to choose the topic for your project, but it must meet certain guidelines.\nProjects must be selected during the first two weeks of class. Projects much be an emerging technology, product, or policy with a clearly identified market that has not yet been introduced into the mass market, such as a new invention from a research laboratory at GWU or a new product being explored by a firm. Students have the option to choose a sponsored project or propose their own project if it is approved by the instructor and meets the following criteria:\n\nInnovative / Emerging: The proposed project involves a new product or technology with attributes (e.g. price, efficiency, reliability, size, performance, color, etc.) that may be competitive in the marketplace but for which actual market adoption is still uncertain.\nWell-Defined: This course focuses on mathematical modeling to support design decision-making. There is not sufficient time in the course for conceptual design of a new product.\nIdentified Target Market: A target market has been identified for this new product or technology. Competing products in that market are known, and the attributes on which new market entrants compete can be identified. Representative potential customers can be identified for survey solicitation. If the new product or technology is a component of a larger product sold to a consumer market, students may assess the market implications for the final consumer product.\nPrior to Mass Commercialization: The new product or technology has only recently or has not yet been introduced to the mass market.\nModerate Scope and Complexity: The product or technology should involve moderate complexity. For example, a non-differentiated commodity, such as sugar, is too simple, and a complex product involving many components and manufacturing operations, such as a vehicle, is too complex.\nExpertise: If the product involves a new technology that requires specialized knowledge about its attributes, the team should have reliable access to experts who can supply the requisite knowledge.\nDecision Variables: The product should have several non-trivial design decisions. For example, choosing between two materials or topologies, setting dimensions of a component, or selecting among a set of alternative component configurations are suitable design decisions. The models developed in the project will be used to support decision-making along such dimensions.\n\n\n\nTeamwork\nThe experience of working in teams on this project will serve as preparation for teamwork throughout your careers. Some teams may experience an imbalance in team member contributions, effort, or reliability. The instructor is available to provide advice and interact in resolving team inequity and conflict; however, students should view this as a learning experience. Such situations regularly occur in any career, and learning how to handle them is a valuable skill. If you experience challenges within your team, it is a good opportunity to develop strategies and figure out how you will address such challenges in the future. One common job interview question is, “Describe a time when you experienced difficulties working in a team or experienced a team failure. What did you do about it?” This is a good chance to build a strong answer to this question.",
     "crumbs": [
-      "Other",
-      "About"
+      "Final Project",
+      "Overview"
     ]
   },
   {
@@ -533,174 +666,48 @@
     ]
   },
   {
-    "objectID": "project/0-overview.html",
-    "href": "project/0-overview.html",
-    "title": "Project Overview",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Throughout the semester, you will work in teams of 3-4 students towards a final project. The project will have three phases:\n\nProject proposal\nPilot survey & analysis\nFinal survey & analysis\n\nTeams will apply topics covered in class to develop quantitative models of consumer choice to inform design decisions for a novel product, technology, or policy. Each team will have somewhat different tasks and areas of emphasis, depending on the product selected; however, all projects will be expected to demonstrate mastery of the topics covered in class and to address the criteria and guidelines required for project assignments.\nSummary of Deliverables: To make the overall project more manageable, it is broken down into separate “milestone” deliverables due throughout the semester, starting with a proposal.\n\n\n\n\nItem\nWeight towardsfinal grade\nDue Date(by 11:59pm)\n\n\n\n\nProject Proposal\n5 %\nSep. 24\n\n\nSurvey Plan\n5 %\nOct. 03\n\n\nPilot Survey\n5 %\nOct. 17\n\n\nPilot Analysis\n5 %\nNov. 05\n\n\nFinal Survey\n5 %\nNov. 19\n\n\nFinal Analysis Report\n15 %\nDec. 10\n\n\nFinal Presentation\n5 %\nDec. 12\n\n\n\n\n\nProject Selection\nI want this project to be as useful for you and your future career as possible - you’ll hopefully want to show off your final project in a portfolio or during job interviews. Accordingly, you get to choose the topic for your project, but it must meet certain guidelines.\nProjects must be selected during the first two weeks of class. Projects much be an emerging technology, product, or policy with a clearly identified market that has not yet been introduced into the mass market, such as a new invention from a research laboratory at GWU or a new product being explored by a firm. Students have the option to choose a sponsored project or propose their own project if it is approved by the instructor and meets the following criteria:\n\nInnovative / Emerging: The proposed project involves a new product or technology with attributes (e.g. price, efficiency, reliability, size, performance, color, etc.) that may be competitive in the marketplace but for which actual market adoption is still uncertain.\nWell-Defined: This course focuses on mathematical modeling to support design decision-making. There is not sufficient time in the course for conceptual design of a new product.\nIdentified Target Market: A target market has been identified for this new product or technology. Competing products in that market are known, and the attributes on which new market entrants compete can be identified. Representative potential customers can be identified for survey solicitation. If the new product or technology is a component of a larger product sold to a consumer market, students may assess the market implications for the final consumer product.\nPrior to Mass Commercialization: The new product or technology has only recently or has not yet been introduced to the mass market.\nModerate Scope and Complexity: The product or technology should involve moderate complexity. For example, a non-differentiated commodity, such as sugar, is too simple, and a complex product involving many components and manufacturing operations, such as a vehicle, is too complex.\nExpertise: If the product involves a new technology that requires specialized knowledge about its attributes, the team should have reliable access to experts who can supply the requisite knowledge.\nDecision Variables: The product should have several non-trivial design decisions. For example, choosing between two materials or topologies, setting dimensions of a component, or selecting among a set of alternative component configurations are suitable design decisions. The models developed in the project will be used to support decision-making along such dimensions.\n\n\n\nTeamwork\nThe experience of working in teams on this project will serve as preparation for teamwork throughout your careers. Some teams may experience an imbalance in team member contributions, effort, or reliability. The instructor is available to provide advice and interact in resolving team inequity and conflict; however, students should view this as a learning experience. Such situations regularly occur in any career, and learning how to handle them is a valuable skill. If you experience challenges within your team, it is a good opportunity to develop strategies and figure out how you will address such challenges in the future. One common job interview question is, “Describe a time when you experienced difficulties working in a team or experienced a team failure. What did you do about it?” This is a good chance to build a strong answer to this question.",
+    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nThis course was first created by Dr. John Paul Helveston at the George Washington University for the Spring 2019 semester of EMSE 6035, which was previously called Marketing of Technology. See the LICENSE page for information about reusing and sharing content.",
     "crumbs": [
-      "Final Project",
-      "Overview"
+      "Other",
+      "About"
     ]
   },
   {
-    "objectID": "hw/8-doe-power-analysis.html",
-    "href": "hw/8-doe-power-analysis.html",
-    "title": "Design of Experiment",
+    "objectID": "class/10-doe-power-analysis.html",
+    "href": "class/10-doe-power-analysis.html",
+    "title": "DOE & Power Analysis",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "hw/6-optimization-mle.html",
-    "href": "hw/6-optimization-mle.html",
-    "title": "Optimization & MLE",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/4-conjoint-questions.html",
-    "href": "hw/4-conjoint-questions.html",
-    "title": "Conjoint Surveys in formr",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/2-quarto-plotting.html",
-    "href": "hw/2-quarto-plotting.html",
-    "title": "Quarto & Plotting",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/10-heterogeneity.html",
-    "href": "hw/10-heterogeneity.html",
+    "objectID": "class/12-heterogeneity.html",
+    "href": "class/12-heterogeneity.html",
     "title": "Heterogeneity",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
-    "section": "",
-    "text": "You should install and set everything here before the first day of class.\n\n\nSign up for Slack. You should have been sent a link to join in the course intro email. If not, email Professor Helveston for an invite link. Use your @gwu.edu email to sign up.\nInstall the Slack app on your phone and Turn notifications on!. I’ll send all course communication via Slack, so please make sure your notifications are on so you don’t miss anything.\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nIf you have a Mac, install XQuartz. This is needed for making some figures and is only for Mac (if you’re on Windows or Linux, skip this step).\nDownload and install Quarto\nSign up for Posit Cloud1 (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\nYou’ll need to install some R packages in RStudio that we will use throughout the semester. To do so, open RStudio then copy-paste this code into the console and press Return. This will install all the packages listed in the file.\n\nThat’s it - you’re all set for class!",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#footnotes",
-    "href": "software.html#footnotes",
-    "title": "Software",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n“Posit” is the company that makes “RStudio”, the software we’ll use to work with R.↩︎",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Licensing and copyright information",
-    "section": "",
-    "text": "The course material is licensed under the Creative Commons Attribution 4.0 International License and the course code is licensed under a MIT License by John Helveston.",
-    "crumbs": [
-      "Other",
-      "License"
-    ]
-  },
-  {
-    "objectID": "hw/11-exam.html",
-    "href": "hw/11-exam.html",
-    "title": "Exam",
+    "objectID": "class/14-story-telling.html",
+    "href": "class/14-story-telling.html",
+    "title": "Story Telling",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "hw/3-intro-to-formr.html",
-    "href": "hw/3-intro-to-formr.html",
+    "objectID": "class/2-data-wrangling.html",
+    "href": "class/2-data-wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/4-intro-to-formr.html",
+    "href": "class/4-intro-to-formr.html",
     "title": "Intro to formr",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/5-utility-models.html",
-    "href": "hw/5-utility-models.html",
-    "title": "Utility Models",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/7-uncertainty.html",
-    "href": "hw/7-uncertainty.html",
-    "title": "Uncertainty",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/9-wtp-simulation.html",
-    "href": "hw/9-wtp-simulation.html",
-    "title": "WTP & Simulations",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "project/examples.html",
-    "href": "project/examples.html",
-    "title": "Example Analyses",
-    "section": "",
-    "text": "As inspiration for your final projects, check out these prior exploratory data analyses.\n\nPrevious course showcases\n\n\n\n\n\nFall 2021 Showcase\nProjects from the fall 2021 semester of this class.\n\n\n\n\n\n\n\nFall 2022 Showcase\nProjects from the fall 2022 semester of this class.",
-    "crumbs": [
-      "Final Project",
-      "Examples"
-    ]
-  },
-  {
-    "objectID": "self-assessment.html",
-    "href": "self-assessment.html",
-    "title": "Self Assessment",
-    "section": "",
-    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
-  },
-  {
-    "objectID": "self-assessment.html#this-assignment-is-optional",
-    "href": "self-assessment.html#this-assignment-is-optional",
-    "title": "Self Assessment",
-    "section": "",
-    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
-  },
-  {
-    "objectID": "class/1-getting-started.html",
-    "href": "class/1-getting-started.html",
-    "title": "Getting Started",
-    "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS PRACTICE\n Notes zip file"
-  },
-  {
-    "objectID": "class/11-wtp-simulation.html",
-    "href": "class/11-wtp-simulation.html",
-    "title": "WTP & Simulations",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/13-class-review.html",
-    "href": "class/13-class-review.html",
-    "title": "Class Review",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/15-final-presentations.html",
-    "href": "class/15-final-presentations.html",
-    "title": "Final Presentations",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/3-quarto-plotting.html",
-    "href": "class/3-quarto-plotting.html",
-    "title": "Quarto & Plotting",
     "section": "",
     "text": "Coming soon!"
   },

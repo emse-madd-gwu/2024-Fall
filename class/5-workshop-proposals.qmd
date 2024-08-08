@@ -1,0 +1,15 @@
+---
+title: "Project Workshops"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "5-workshop-proposals"
+  logitrcars: FALSE
+  formr4conjoint: FALSE
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```
