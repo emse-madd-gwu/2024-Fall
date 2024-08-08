@@ -1,0 +1,15 @@
+---
+title: "Getting Started"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "1-getting-started"
+  logitrcars: FALSE
+  formr4conjoint: FALSE
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```
