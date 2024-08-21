@@ -1,7 +1,7 @@
 ---
 title: "Quarto & Plotting"
 subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
-date: September 13, 2023
+date: September 11, 2024
 week: 3
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"

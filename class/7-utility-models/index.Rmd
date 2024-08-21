@@ -1,7 +1,7 @@
 ---
 title: "Utility Models"
 subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
-date: October 11, 2023
+date: October 09, 2024
 week: 7
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"

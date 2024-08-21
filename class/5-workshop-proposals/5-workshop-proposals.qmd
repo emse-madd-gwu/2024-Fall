@@ -1,12 +1,12 @@
 ---
-title: "Exploring Data"
+title: "Team Workshops"
 params:
-  class: "4-exploring-data"
+  class: "5-workshop-proposals"
 execute:
   echo: false
   warning: false
   message: false
 ---
 
-```{r child = here::here("fragments", "class.qmd")}
+```{r child = here::here("fragments", "placeholder.qmd")}
 ```
