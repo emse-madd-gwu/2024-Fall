@@ -1,7 +1,7 @@
 ---
 title: "Heterogeneity"
 subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
-date: November 15, 2023
+date: November 13, 2024
 week: 12
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
