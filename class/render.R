@@ -8,12 +8,13 @@ renderthis::to_pdf("index.html", paste0(lesson, ".pdf"))
 # Compress the PDF to reduce size
 tools::compactPDF(paste0(lesson, ".pdf"), gs_quality = 'ebook')
 
+files1 <- c( 
+    '1-getting-started.Rproj',
+    'intro-to-R.R'
+)
+
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = c(
-        # "data",
-        'practice-solutions.qmd',
-        'practice.qmd',
-        paste0(lesson, ".Rproj"))
+    files = c(files1, paste0(lesson, ".Rproj"))
 )
