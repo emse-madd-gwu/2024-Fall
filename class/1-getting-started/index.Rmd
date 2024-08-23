@@ -66,15 +66,15 @@ output:
 
 --
 
-## `r fa('globe')` Course website: https://madd.seas.gwu.edu/2023-Fall/
+## `r fa('globe')` Course website: https://madd.seas.gwu.edu/2024-Fall/
 
 --
 
-## `r fa('slack')` Course slack: https://emse-madd-f23.slack.com
+## `r fa('slack')` Course slack: https://emse-madd-f24.slack.com
 
 --
 
-## `r fa('r-project')` & RStudio: [Course Software Page](https://madd.seas.gwu.edu/2023-Fall/software.html)
+## `r fa('r-project')` & RStudio: [Course Software Page](https://madd.seas.gwu.edu/2024-Fall/software.html)
 
 ---
 
@@ -117,7 +117,7 @@ class: center
 
 ### **Not sure?** 
 
-### Take [this self assessment](https://madd.seas.gwu.edu/2023-Fall/self-assessment.html)
+### Take [this self assessment](https://madd.seas.gwu.edu/2024-Fall/self-assessment.html)
 
 ]
 
@@ -171,7 +171,7 @@ class: center
 
 ---
 
-# [Semester Project](https://madd.seas.gwu.edu/2023-Fall/project/0-overview.html) (45% of grade)
+# [Semester Project](https://madd.seas.gwu.edu/2024-Fall/project/0-overview.html) (45% of grade)
 
 .leftcol[
 
@@ -208,7 +208,7 @@ background-color: #FFF
 # .center[Grades]
 
 <center>
-<img src="https://madd.seas.gwu.edu/2023-Fall/figs/grade-breakdown-1.png" width=90%>
+<img src="https://madd.seas.gwu.edu/2024-Fall/figs/grade-breakdown-1.png" width=90%>
 </center>
 
 ---
@@ -308,7 +308,7 @@ Final Presentation    | 5 %    |
 
 --
 
-## `r fa('slack')` Use [Slack](https://emse-madd-f23.slack.com/) to ask questions.
+## `r fa('slack')` Use [Slack](https://emse-madd-f24.slack.com/) to ask questions.
 
 --
 
@@ -518,7 +518,7 @@ class: center, inverse, middle
 
 # Your project starts now!
 
-# [View project Ideas](https://docs.google.com/presentation/d/1bNnsKWkU8FwGHIL_jK72ilXsvhZhr98Q/edit?usp=sharing)
+# [View project Ideas](https://docs.google.com/presentation/d/1MQe3Q_f8uWRF5PUtNRnNEQHqWapjS8YM/edit?usp=sharing&ouid=108448693507188860264&rtpof=true&sd=true)
 
 ---
 
@@ -543,7 +543,7 @@ class: inverse
 
 # .center[.fancy[Break]]
 
-1. If you haven't already, install everything on the [software page](https://madd.seas.gwu.edu/2023-Fall/software.html)
+1. If you haven't already, install everything on the [software page](https://madd.seas.gwu.edu/2024-Fall/software.html)
 
 2. Stand up, meet each other, (maybe form teams?...use [this sheet](https://docs.google.com/spreadsheets/d/1Y-ApfpujwbywjL05KCmUo-AzZqRheqq7_M_vLuEnjt0/edit?usp=sharing)) 
 
@@ -786,7 +786,7 @@ wikifacts::wiki_randomfact()
 
 class: inverse, center, middle
 
-## If you haven't yet, install [these packages](https://raw.githubusercontent.com/emse-madd-gwu/2023-Fall/main/content/packages.R)
+## If you haven't yet, install [these packages](https://raw.githubusercontent.com/emse-madd-gwu/2024-Fall/main/content/packages.R)
 
 ---
 
