@@ -1,7 +1,7 @@
 ---
 title: "A Quick Quarto Demo"
 subtitle: "A summary of just a few features"
-author: "John Helveston"
+author: "Your name"
 format: 
   html:
     toc: true
