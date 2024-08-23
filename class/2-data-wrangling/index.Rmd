@@ -725,7 +725,7 @@ countdown(
 
 class: center, middle
 
-# [Project Proposal Guidelines](https://madd.seas.gwu.edu/2023-Fall/project/1-proposal.html)
+# [Project Proposal Guidelines](https://madd.seas.gwu.edu/2024-Fall/project/1-proposal.html)
 
 ---
 
@@ -736,7 +736,8 @@ Item | Description
 **Abstract** | Product / technology in just a few sentences
 **Introduction** | Description, picture, background
 **Market Opportunity** | Identify your customer, competitors, and market size
-**Product Attributes & Research Questions** | 2-4 key variables related to product's design and performance
+**Product Attributes** | 2-4 key variables related to product's design and performance
+**Research Questions** | 2-4 research questions you hope to answer about your product
 **Questions** | Major outstanding questions to be resolved
 
 ---

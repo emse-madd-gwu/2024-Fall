@@ -13,8 +13,15 @@ files1 <- c(
     'intro-to-R.R'
 )
 
+files2 <- c(
+    '2-data-wrangling.Rproj',
+    'data',
+    'practice-solutions.R',
+    'practice.R'
+)
+
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = c(files1, paste0(lesson, ".Rproj"))
+    files = c(files2, paste0(lesson, ".Rproj"))
 )
