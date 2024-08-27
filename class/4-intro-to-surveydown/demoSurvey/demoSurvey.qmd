@@ -1,0 +1,222 @@
+---
+server: shiny
+filters: [surveydown]
+execute: 
+  message: false
+  warning: false
+---
+
+```{r}
+#| context: setup
+#| echo: false
+#| warning: false
+#| message: false
+
+# Run this in your R Console to install the latest version of the package:
+# remotes::install_github("surveydown-dev/surveydown", force = TRUE)
+
+# Run this to install or update the Quarto extension to the latest version:
+# surveydown::sd_update_extension()
+
+# Load packages
+library(surveydown)
+library(tidyverse)
+
+# Run initial setup function (essential - do not delete)
+sd_setup()
+```
+
+::: {#welcome .sd-page}
+
+# Welcome to our survey!
+
+For this survey, we will ask you about your preferences for different types of apples. Here are some questions to get started.
+
+```{r}
+sd_question(
+  type   = 'mc',
+  id     = 'fruit',
+  label  = "Do you like fruit?",
+  option = c(
+    'Yes!'    = 'yes',
+    'Kind of' = 'kind_of',
+    'No :('   = 'no'
+  )
+)
+
+sd_question(
+  type   = 'text',
+  id     = 'fav_fruit',
+  label  = "What is your favorite fruit?"
+)
+
+years <- as.character(2003:1920)
+names(years) <- years
+years <- c("Prefer not to say" = "prefer_not_say", years)
+
+sd_question(
+  type   = 'select',
+  id     = 'year_of_birth',
+  label  = "In what year were you born?",
+  option = years
+)
+```
+
+<br>
+
+```{r}
+sd_next(next_page = 'page2')
+```
+
+:::
+
+::: {#page2 .sd-page}
+
+Before we go on, please select which color you prefer between these two:
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "pill_color",
+  label = "Choose a color:",
+  option = c("Red" = "red", "Blue" = "blue")
+)
+```
+
+<br>
+
+```{r}
+sd_next(next_page = 'nasa_data')
+```
+
+:::
+
+::: {#nasa_data .sd-page}
+
+Because surveydown uses Quarto to define content, you can include R code in your survey.
+
+For example, here I'm reading in [this data](https://github.com/jhelvy/charts/blob/master/climateChangeBarcode/data/noaa_global_data.csv), which is in my project directory
+
+```{r}
+data <- read_csv("nasa_global_temps.csv")
+```
+
+```{r}
+#| label: nasa-temps
+#| fig-width: 5
+#| fig-height: 4
+#| fig-align: center
+
+data %>%
+  ggplot(aes(x = year, y = meanTemp)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  theme_bw() +
+  labs(
+    x = "Year",
+    y = "Temperature Anomaly (C)",
+    caption = "Data Source: NASA"
+  )
+```
+
+I can also extract information from the data and display it.
+
+```{r}
+data2020 <- data %>%
+  filter(year == 2020)
+```
+
+The temperature anomaly in 2020 was `r data2020$meanTemp` degrees Celsius.
+
+<br>
+
+```{r}
+sd_next(next_page = 'image')
+```
+
+:::
+
+::: {#image .sd-page}
+
+You can also just write html directly, which I prefer when inserting images, like this:
+
+<center>
+<img src="https://github.com/emse-madd-gwu/2024-Fall/blob/main/images/logo.png?raw=true" width=300>
+</center>
+
+<br>
+
+```{r}
+sd_next(next_page = 'end')
+```
+
+:::
+
+::: {#end .sd-page}
+
+This it the last page in the survey
+
+:::
+
+```{r}
+#| context: server
+
+##################
+# database setup #
+##################
+
+# surveydown stores data on a database that you define at https://supabase.com/
+# To connect to a database to store the survey data, update this with details
+# from your supabase account and database. For this demo, we set pause = TRUE
+# which will ignore the other settings and won't attempt to connect to
+# the database. See documentation for details at
+# https://surveydown.org/store-data
+
+db <- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "",
+  pause  = TRUE
+)
+
+################
+# config setup #
+################
+
+# Use the sd_config() function to customize features in your survey, like
+# logic to conditionally display questions or skip to pages based on responses
+# to skip other questions in your survey. See documentation for details at
+# https://surveydown.org/config
+
+# Here I insert skip_if logic to skip to the end if the respondent chooses the 
+# blue pill, and also show_if logic to only show the favorite fruit question
+# if the user doesn't choose "no" on the first question
+
+config <- sd_config(
+  skip_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'pill_color', 'blue',          'end'
+  ), 
+  show_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'fruit',      'yes',          'fav_fruit', 
+    'fruit',      'kind_of',      'fav_fruit'
+  ), 
+)
+
+####################################
+# Don't change anything below here #
+####################################
+
+# The sd_server function initiates your survey - don't change this
+
+sd_server(
+  input   = input,
+  output  = output,
+  session = session,
+  config  = config,
+  db      = db
+)
+```
