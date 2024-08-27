@@ -61,6 +61,27 @@ class: center, middle
 
 ---
 
+# Four parts to a surveydown survey
+
+.leftcol[
+
+1. The YAML header
+2. The setup code chunk
+3. The survey body
+4. The server code chunk
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/survey-screenshot.png" width=400>
+</center>
+
+]
+
+---
+
 # Inserting pages
 
 Insert new pages with `:::` symbols, like this
@@ -158,6 +179,34 @@ I recommend just writing html code, like this
 <center>
 <img src="https://github.com/emse-madd-gwu/2024-Fall/blob/main/images/logo.png?raw=true" width=250>
 </center>
+
+---
+
+# The server code chunk
+
+---
+
+# Enabling conditional actions
+
+Use the `sd_config()` function to add conditional actions, like conditionally _showing_ something or conditionally _skipping_ to a page.
+
+This is in the server code chunk
+
+```{r}
+#| eval: false
+
+config <- sd_config(
+  skip_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'pill_color', 'blue',          'end'
+  ), 
+  show_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'fruit',      'yes',          'fav_fruit', 
+    'fruit',      'kind_of',      'fav_fruit'
+  ), 
+)
+```
 
 ---
 

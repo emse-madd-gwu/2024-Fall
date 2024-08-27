@@ -1,18 +1,111 @@
 ---
-format: html
+server: shiny
+filters: [surveydown]
+execute:
+  message: false
+  warning: false
 ---
 
 ```{r}
-#| label: setup
-#| include: false
+#| context: setup
+#| echo: false
+#| warning: false
+#| message: false
 
-knitr::opts_chunk$set(
-    warning = FALSE,
-    message = FALSE,
-    fig.path = "figs/",
-    fig.width = 7.252,
-    fig.height = 4,
-    comment = "#>",
-    fig.retina = 3
+# Run this in your R Console to install the latest version of the package:
+# remotes::install_github("surveydown-dev/surveydown", force = TRUE)
+
+# Run this to install or update the Quarto extension to the latest version:
+# surveydown::sd_update_extension()
+
+# Load packages
+library(surveydown)
+
+# Run initial setup function (essential - do not delete)
+sd_setup()
+```
+
+::: {#welcome .sd-page}
+
+Add content here
+
+<br>
+
+```{r}
+sd_next(next_page = 'page2')
+```
+
+:::
+
+::: {#page2 .sd-page}
+
+More content here
+
+<br>
+
+```{r}
+sd_next(next_page = 'end')
+```
+
+:::
+
+::: {#end .sd-page}
+
+This it the last page in the survey
+
+:::
+
+```{r}
+#| context: server
+
+##################
+# database setup #
+##################
+
+# surveydown stores data on a database that you define at https://supabase.com/
+# To connect to a database to store the survey data, update this with details
+# from your supabase account and database. For this demo, we set pause = TRUE
+# which will ignore the other settings and won't attempt to connect to
+# the database. See documentation for details at
+# https://surveydown.org/store-data
+
+db <- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "",
+  pause  = TRUE
+)
+
+################
+# config setup #
+################
+
+# Use the sd_config() function to customize features in your survey, like
+# logic to conditionally display questions or skip to pages based on responses
+# to skip other questions in your survey. See documentation for details at
+# https://surveydown.org/config
+
+# Here I insert skip_if logic to skip to the end if the respondent chooses the
+# blue pill, and also show_if logic to only show the favorite fruit question
+# if the user doesn't choose "no" on the first question
+
+config <- sd_config(
+ # Add any configurations here
+)
+
+####################################
+# Don't change anything below here #
+####################################
+
+# The sd_server function initiates your survey - don't change this
+
+sd_server(
+  input   = input,
+  output  = output,
+  session = session,
+  config  = config,
+  db      = db
 )
 ```
