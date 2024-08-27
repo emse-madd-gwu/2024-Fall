@@ -167,15 +167,5 @@ Render your `report.qmd` file, then create a zip file of all the files in your R
 **`r maxPoints` Total Points**
 
 ```{r, echo=FALSE}
-rubric %>%
-  mutate(description = paste0("<b>", points, '</b><br>', description)) %>%
-  select(-points) %>%
-  spread(key = rating, value = description) %>%
-  select(-category) %>%
-  rename(Category = label) %>%
-  arrange(order) %>%
-  select(-order) %>%
-  select(-maxPoints) %>%
-  kable(format = 'html', escape = FALSE) %>%
-  kable_styling(bootstrap_options = "striped")
+make_rubric(rubric)
 ```

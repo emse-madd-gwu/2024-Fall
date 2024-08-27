@@ -78,15 +78,5 @@ Create a zip file of your slides as a pdf / pptx / qmd (whatever you used to mak
 **`r maxPoints` Total Points**
 
 ```{r, echo=FALSE}
-rubric %>%
-  mutate(description = paste0("<b>", points, '</b><br>', description)) %>%
-  select(-points) %>%
-  spread(key = rating, value = description) %>%
-  select(-category) %>%
-  rename(Category = label) %>%
-  arrange(order) %>%
-  select(-order) %>%
-  select(-maxPoints) %>%
-  kable(format = 'html', escape = FALSE) %>%
-  kable_styling(bootstrap_options = "striped")
+make_rubric(rubric)
 ```
