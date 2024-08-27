@@ -10,7 +10,7 @@ project:
     - "!1-getting-started/"
     - "!2-data-wrangling/"
     - "!3-quarto-plotting/"
-    - "!4-intro-to-formr/"
+    - "!4-intro-to-surveydown/"
     - "!5-workshop-proposals/"
     - "!6-conjoint-questions/"
     - "!7-utility-models/"
