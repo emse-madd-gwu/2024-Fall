@@ -24,6 +24,20 @@ knitr::opts_chunk$set(
     fig.path   = "figs/"
 )
 
+make_rubric <- function(rubric) {
+  rubric %>%
+    mutate(description = paste0("<b>", points, '</b><br>', description)) %>%
+    select(-points) %>%
+    spread(key = rating, value = description) %>%
+    select(-category) %>%
+    rename(Category = label) %>%
+    arrange(order) %>%
+    select(-order) %>%
+    select(-maxPoints) %>%
+    kable(format = 'html', escape = FALSE) %>%
+    kable_styling(bootstrap_options = "striped")
+}
+
 # The icon_link() function is in {distilltools}, but I've modified this
 # one to include  a custom class to be able to have more control over the
 # CSS and an optional target argument
