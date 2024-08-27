@@ -87,6 +87,9 @@ website:
       - text: Software
         icon: download
         href: software.qmd
+      - text: FAQ
+        icon: question-square-fill
+        href: faq.qmd
       - text: References
         icon: bookmark-fill
         href: references.qmd
