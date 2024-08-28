@@ -55,15 +55,19 @@ class: inverse, middle
 
 ---
 
-class: center, middle 
+class: middle 
 
-# See `demoSurvey.qmd`
+# 1. Open `demoSurvey.Rproj`
+
+# 2. Open `demoSurvey.qmd`
+
+# 3. Click "Run Document"
 
 ---
 
-# Four parts to a surveydown survey
-
 .leftcol[
+
+# Four parts to a surveydown survey
 
 1. The YAML header
 2. The setup code chunk
@@ -82,11 +86,115 @@ class: center, middle
 
 ---
 
+## 1. YAML Header
+
+The YAML header is at the top of the `.qmd` file. 
+
+**Must contain at least the following**:
+
+``` yaml
+---
+server: shiny
+filters: [surveydown]
+---
+```
+
+---
+
+## Change the survey theme 
+
+.leftcol[
+
+Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
+
+``` yaml
+---
+theme: united 
+---
+```
+
+]
+
+.rightcol[
+
+Make a custom theme with a `custom.scss` file
+
+``` yaml
+---
+theme: [united, custom.scss]
+---
+```
+
+]
+
+---
+
+## Progress bar
+
+You can modify the survey progress bar with the `barcolor` and `barposition` keys:
+
+.leftcol[
+
+Change to any color you want with the `barcolor` key:
+
+``` yaml
+---
+barcolor: #768692 
+---
+```
+
+]
+
+.rightcol[
+
+Change the position, use `top`, `bottom`, or `none`
+
+``` yaml
+---
+barposition: bottom
+---
+```
+
+]
+
+---
+
+## 2. Setup code chunk
+
+The setup chunk is the first chunk, usually looks like this:
+
+````markdown
+`r ''````{r}
+#| echo: fenced
+#| context: setup
+#| warning: false
+#| message: false
+
+# Load the package
+library(surveydown)
+
+# Load an other packages here
+
+# Run initial setup function (essential - do not delete)
+sd_setup()
+```
+````
+
+---
+
+## 3. Survey body
+
+This is where you insert pages, text, images, questions, etc.
+
+---
+
 # Inserting pages
 
 Insert new pages with `:::` symbols, like this
 
-```
+```{r}
+#| eval: false
+
 ::: {#page_name .sd-page}
 
 Page content here
@@ -154,6 +262,21 @@ sd_question(
 
 ---
 
+## surveydown supports lots of [question types](https://surveydown.org/question-types)
+
+Some common types you may want to use:
+
+Type | Description
+-----|---------------------
+`mc` | Multiple choice question (single choice) 
+`mc_multiple` | Multiple choice question (multiple choices) 
+`mc_buttons` | Multiple choice question (large buttons)
+`select` | Drop down menu (choose one)
+`text` | Open text, single row
+`textarea` | Open text, block
+
+---
+
 # Embedding images
 
 I recommend just writing html code, like this
@@ -184,13 +307,16 @@ I recommend just writing html code, like this
 
 # The server code chunk
 
+- Connect to your database for storing data.
+- Set up custom configurations, like skip logic.
+
 ---
 
 # Enabling conditional actions
 
 Use the `sd_config()` function to add conditional actions, like conditionally _showing_ something or conditionally _skipping_ to a page.
 
-This is in the server code chunk
+This is in the server code chunk of `demoSurvey.qmd`
 
 ```{r}
 #| eval: false
@@ -207,6 +333,60 @@ config <- sd_config(
   ), 
 )
 ```
+
+---
+
+## Conditional skipping
+
+If they choose "Blue", skip to the end page
+
+```{r}
+#| eval: false
+
+config <- sd_config(
+  skip_if = tibble::tribble( #<<
+    ~question_id, ~question_value, ~target, #<<
+    'pill_color', 'blue',          'end'#<<
+  ), #<<
+  show_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'fruit',      'yes',          'fav_fruit', 
+    'fruit',      'kind_of',      'fav_fruit'
+  ), 
+)
+```
+
+---
+
+## Conditional showing
+
+The "What's your favorite fruit" question will only be shown if they choose "Yes" or "Kind of" for the "Do you like fruit" question
+
+```{r}
+#| eval: false
+
+config <- sd_config(
+  skip_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'pill_color', 'blue',          'end'
+  ), 
+  show_if = tibble::tribble( #<<
+    ~question_id, ~question_value, ~target, #<<
+    'fruit',      'yes',          'fav_fruit', #<< 
+    'fruit',      'kind_of',      'fav_fruit' #<<
+  ), #<<
+)
+```
+
+---
+
+## Connecting a database
+
+This happens with `sd_database()`.
+
+Ignore this for now - we'll connect our database soon!
+
+For now you can see the data from chosen responses in a `data.csv` file written in the project folder.
 
 ---
 
@@ -229,141 +409,13 @@ countdown(
 - Pick a topic for your survey (a food, an animal, a sports team...whatever).
 - Draft a survey about that topic. Include the following:
     - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
-    - Page 2: Once simple multiple choice question about the topic (state the question and write the choice responses as bullets).
-    - Page 3: Choose a data set from [this page](https://github.com/emse-eda-gwu/2022-Fall/tree/master/data) (pick a .csv file). Get the url to the .csv file you chose, read it in, and display only the first 6 rows of the data file (do not show any code - only the output of your code).
-    - Page 4: Show the last 6 rows of the same data file (again, only the output - hide all code).
+    - Page 2: Add one simple multiple choice question about the topic and another that will only display depending on a specific choice in the first question
+    - Pages 3 & 4: These pages should be two different "end" conditions. Respondents should be sent to either page based on their choices in the multiple choice question on page 2.
     
 ---
 
 ```{r child="topics/2.Rmd"}
 ```
-
----
-
-# formr principles
-
-<br>
-
-## - Use _RMarkdown / html_ to create survey elements
-
-## - Define surveys in _Google Sheets_
-
-## - Import Google Sheets into formr _surveys_
-
-## - Link surveys together in formr _runs_
-
----
-
-class: middle, center
-
-# [Demo survey](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing)
-
----
-
-# .center[formr row types [(more here)](https://formr.org/documentation#available_items)]
-
-Type | Description
------|---------------------
-`note` | Display content in `label` column 
-`submit` | Next page button
-`mc` | Multiple choice question (single choice) 
-`mc_multiple` | Multiple choice question (multiple choices) 
-`mc_button` | Multiple choice question (large buttons)
-`select_one` | Drop down menu (choose one)
-`text` | Open text, single row
-`textarea` | Open text, block
-
----
-
-# Two ways to define choice options 
-
-.leftcol[
-
-Add "choice" columns 
-
-<center>
-<img src="images/choices.png" width=100%>
-</center>
-
-]
-
---
-
-.rightcol[
-
-Use `choices` tab<br>(when you have a lot of choices)
-
-Example: "Year of birth" in [randomImagesDemo](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing)
-
-]
-
----
-
-class: center, middle
-
-# Control the way things look in `class` column
-
-# ([options here](https://formr.org/documentation#sample_survey_sheet))
-
----
-
-class: center 
-
-# Importing survey into formr 
-
-### formr.org --> Admin --> Surveys --> Create new survey
-
-### (Make sure your Google Sheet is visible!)
-
-<center>
-<img src="images/gsheetlink.png" width=600>
-</center>
-
----
-
-class: center 
-
-# Make a run
-
-## formr.org --> Admin --> Runs --> Create new run
-
---
-
-<br>
-
-# Insert survey with `r fa("pencil-square")`
-
---
-
-<br>
-
-# Insert stop with `r fa("stop")`
-
----
-
-class: center 
-
-## Change order by adjusting numbers & clicking "Reorder"
-
-<center>
-<img src="images/order.png" width=500>
-</center>
-
----
-
-class: center, middle
-
-# Make it "live" with the volume buttons
-
-<center>
-<img src="images/publicness.png" width=1000>
-</center>
-
----
-
-class: center 
-
-# Fine tune look & feel in "Settings"
 
 ---
 

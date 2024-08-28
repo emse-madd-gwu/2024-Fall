@@ -114,33 +114,136 @@ class: inverse, middle
 
 ---
 
-class: center, middle 
+class: middle 
 
-# See `demoSurvey.qmd`
+# 1. Open `demoSurvey.Rproj`
+
+# 2. Open `demoSurvey.qmd`
+
+# 3. Click "Run Document"
 
 ---
 
-# Four parts to a surveydown survey
-
 .leftcol[
+
+# Four parts to a surveydown survey
 
 1. The YAML header
 2. The setup code chunk
 3. The survey body
 4. The server code chunk
 
-
-
 ]
 
 .rightcol[
 
 &lt;center&gt;
-&lt;img src="images/survey-screenshot.png" width=100%&gt;
+&lt;img src="images/survey-screenshot.png" width=400&gt;
 &lt;/center&gt;
 
 ]
 
+---
+
+## 1. YAML Header
+
+The YAML header is at the top of the `.qmd` file. 
+
+**Must contain at least the following**:
+
+``` yaml
+---
+server: shiny
+filters: [surveydown]
+---
+```
+
+---
+
+## Change the survey theme 
+
+.leftcol[
+
+Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
+
+``` yaml
+---
+theme: united 
+---
+```
+
+]
+
+.rightcol[
+
+Make a custom theme with a `custom.scss` file
+
+``` yaml
+---
+theme: [united, custom.scss]
+---
+```
+
+]
+
+---
+
+## Progress bar
+
+You can modify the survey progress bar with the `barcolor` and `barposition` keys:
+
+.leftcol[
+
+Change to any color you want with the `barcolor` key:
+
+``` yaml
+---
+barcolor: #768692 
+---
+```
+
+]
+
+.rightcol[
+
+Change the position, use `top`, `bottom`, or `none`
+
+``` yaml
+---
+barposition: bottom
+---
+```
+
+]
+
+---
+
+## 2. Setup code chunk
+
+The setup chunk is the first chunk, usually looks like this:
+
+````markdown
+```{r}
+#| echo: fenced
+#| context: setup
+#| warning: false
+#| message: false
+
+# Load the package
+library(surveydown)
+
+# Load an other packages here
+
+# Run initial setup function (essential - do not delete)
+sd_setup()
+```
+````
+
+---
+
+## 3. Survey body
+
+This is where you insert pages, text, images, questions, etc.
 
 ---
 
@@ -148,7 +251,8 @@ class: center, middle
 
 Insert new pages with `:::` symbols, like this
 
-```
+
+``` r
 ::: {#page_name .sd-page}
 
 Page content here
@@ -196,7 +300,7 @@ sd_question(
 
 **Output**
 
-<div id="container- fruit" data-question-id="fruit" class="question-container">
+<div id="container- fruit" data-question-id="fruit" class="question-container" oninput="Shiny.setInputValue(&#39;fruit_interacted&#39;, true, {priority: &#39;event&#39;});">
 <div id="fruit" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="fruit-label">
 <label class="control-label" id="fruit-label" for="fruit"><ol>
 <li>Do you like fruit? <span class='required-asterisk' style='display:none; color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;'>*</span></li>
@@ -226,6 +330,21 @@ sd_question(
 </div>
 
 ]
+
+---
+
+## surveydown supports lots of [question types](https://surveydown.org/question-types)
+
+Some common types you may want to use:
+
+Type | Description
+-----|---------------------
+`mc` | Multiple choice question (single choice) 
+`mc_multiple` | Multiple choice question (multiple choices) 
+`mc_buttons` | Multiple choice question (large buttons)
+`select` | Drop down menu (choose one)
+`text` | Open text, single row
+`textarea` | Open text, block
 
 ---
 
@@ -261,13 +380,16 @@ I recommend just writing html code, like this
 
 # The server code chunk
 
+- Connect to your database for storing data.
+- Set up custom configurations, like skip logic.
+
 ---
 
 # Enabling conditional actions
 
 Use the `sd_config()` function to add conditional actions, like conditionally _showing_ something or conditionally _skipping_ to a page.
 
-This is in the server code chunk
+This is in the server code chunk of `demoSurvey.qmd`
 
 
 ``` r
@@ -286,9 +408,51 @@ config &lt;- sd_config(
 
 ---
 
+## Conditional skipping
+
+If they choose "Blue", skip to the end page
+
+
+``` r
+config &lt;- sd_config(
+* skip_if = tibble::tribble(
+*   ~question_id, ~question_value, ~target,
+*   'pill_color', 'blue',          'end'
+* ),
+  show_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'fruit',      'yes',          'fav_fruit', 
+    'fruit',      'kind_of',      'fav_fruit'
+  ), 
+)
+```
+
+---
+
+## Conditional showing
+
+The "What's your favorite fruit" question will only be shown if they choose "Yes" or "Kind of" for the "Do you like fruit" question
+
+
+``` r
+config &lt;- sd_config(
+  skip_if = tibble::tribble(
+    ~question_id, ~question_value, ~target, 
+    'pill_color', 'blue',          'end'
+  ), 
+* show_if = tibble::tribble(
+*   ~question_id, ~question_value, ~target,
+*   'fruit',      'yes',          'fav_fruit',
+*   'fruit',      'kind_of',      'fav_fruit'
+* ),
+)
+```
+
+---
+
 class: inverse
 
-<div class="countdown" id="timer_10b0e9cf" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_41e12314" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -299,9 +463,8 @@ class: inverse
 - Pick a topic for your survey (a food, an animal, a sports team...whatever).
 - Draft a survey about that topic. Include the following:
     - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
-    - Page 2: Once simple multiple choice question about the topic (state the question and write the choice responses as bullets).
-    - Page 3: Choose a data set from [this page](https://github.com/emse-eda-gwu/2022-Fall/tree/master/data) (pick a .csv file). Get the url to the .csv file you chose, read it in, and display only the first 6 rows of the data file (do not show any code - only the output of your code).
-    - Page 4: Show the last 6 rows of the same data file (again, only the output - hide all code).
+    - Page 2: Add one simple multiple choice question about the topic and another that will only display depending on a specific choice in the first question
+    - Pages 3 &amp; 4: These pages should be two different "end" conditions. Respondents should be sent to either page based on their choices in the multiple choice question on page 2.
     
 ---
 
@@ -321,136 +484,9 @@ class: inverse, middle
 
 ---
 
-# formr principles
-
-&lt;br&gt;
-
-## - Use _RMarkdown / html_ to create survey elements
-
-## - Define surveys in _Google Sheets_
-
-## - Import Google Sheets into formr _surveys_
-
-## - Link surveys together in formr _runs_
-
----
-
-class: middle, center
-
-# [Demo survey](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing)
-
----
-
-# .center[formr row types [(more here)](https://formr.org/documentation#available_items)]
-
-Type | Description
------|---------------------
-`note` | Display content in `label` column 
-`submit` | Next page button
-`mc` | Multiple choice question (single choice) 
-`mc_multiple` | Multiple choice question (multiple choices) 
-`mc_button` | Multiple choice question (large buttons)
-`select_one` | Drop down menu (choose one)
-`text` | Open text, single row
-`textarea` | Open text, block
-
----
-
-# Two ways to define choice options 
-
-.leftcol[
-
-Add "choice" columns 
-
-&lt;center&gt;
-&lt;img src="images/choices.png" width=100%&gt;
-&lt;/center&gt;
-
-]
-
---
-
-.rightcol[
-
-Use `choices` tab&lt;br&gt;(when you have a lot of choices)
-
-Example: "Year of birth" in [randomImagesDemo](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing)
-
-]
-
----
-
-class: center, middle
-
-# Control the way things look in `class` column
-
-# ([options here](https://formr.org/documentation#sample_survey_sheet))
-
----
-
-class: center 
-
-# Importing survey into formr 
-
-### formr.org --&gt; Admin --&gt; Surveys --&gt; Create new survey
-
-### (Make sure your Google Sheet is visible!)
-
-&lt;center&gt;
-&lt;img src="images/gsheetlink.png" width=600&gt;
-&lt;/center&gt;
-
----
-
-class: center 
-
-# Make a run
-
-## formr.org --&gt; Admin --&gt; Runs --&gt; Create new run
-
---
-
-&lt;br&gt;
-
-# Insert survey with <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM325.8 139.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-21.4 21.4-71-71 21.4-21.4c15.6-15.6 40.9-15.6 56.6 0zM119.9 289L225.1 183.8l71 71L190.9 359.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
-
---
-
-&lt;br&gt;
-
-# Insert stop with <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
-
----
-
-class: center 
-
-## Change order by adjusting numbers &amp; clicking "Reorder"
-
-&lt;center&gt;
-&lt;img src="images/order.png" width=500&gt;
-&lt;/center&gt;
-
----
-
-class: center, middle
-
-# Make it "live" with the volume buttons
-
-&lt;center&gt;
-&lt;img src="images/publicness.png" width=1000&gt;
-&lt;/center&gt;
-
----
-
-class: center 
-
-# Fine tune look &amp; feel in "Settings"
-
----
-
 class: inverse
 
-<div class="countdown" id="timer_33a6c72d" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_a23a09ac" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -470,7 +506,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_13864850" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_127b9c12" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
