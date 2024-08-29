@@ -450,9 +450,19 @@ config &lt;- sd_config(
 
 ---
 
+## Connecting a database
+
+This happens with `sd_database()`.
+
+Ignore this for now - we'll connect our database soon!
+
+For now you can see the data from chosen responses in a `data.csv` file written in the project folder.
+
+---
+
 class: inverse
 
-<div class="countdown" id="timer_41e12314" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_fa975a6e" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -484,9 +494,94 @@ class: inverse, middle
 
 ---
 
+## Store data in [Supabase](https://supabase.com/)
+
+Steps to connect a database via Supabase:
+
+1. Create a Supabase account
+2. Create a Supabase project
+3. Copy your credentials
+
+---
+
+## Creating a project
+
+.leftcol[
+
+&lt;center&gt;
+&lt;img src="images/supabase-project.jpg" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol[
+
+- Choose a project name (this is your "database")
+- Each database can have multiple tables 
+- Choose a strong password
+
+]
+
+---
+
+## Set a password with `sd_set_password()`
+
+To access your database from R, you need to securely store your Supabase password. 
+
+Do this in your R console like this:
+
+
+``` r
+sd_set_password("my_password")
+```
+
+--
+
+This creates a `.Renvion` file in your project directory where your password lives. **Don't modify this file!**
+
+```
+SURVEYDOWN_PASSWORD=my_password
+```
+
+---
+
+## Copy your credentials
+
+.leftcol[
+
+Go to **Project Settings** in bottom-left corner, then click **Database** under **Configuration**
+
+Get your **Connection parameters**:
+
+&lt;center&gt;
+&lt;img src="images/db-connection.jpg" width=90%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol[
+
+- Put them in your server code chunk.
+- Choose any table name you want to store your data. 
+
+
+``` r
+db &lt;- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "any_table_name"
+)
+```
+
+]
+
+---
+
 class: inverse
 
-<div class="countdown" id="timer_a23a09ac" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_f442d049" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -506,7 +601,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_127b9c12" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_22e6673c" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

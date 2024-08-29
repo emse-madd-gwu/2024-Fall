@@ -394,11 +394,9 @@ class: inverse
 
 ```{r, echo=FALSE}
 countdown(
-  minutes = 15,
-  warn_when = 15,
-  update_every = 1,
-  top = 0,
-  right = 0,
+  minutes   = 15,
+  top       = 0,
+  right     = 0,
   font_size = '2em'
 )
 ```
@@ -419,27 +417,109 @@ countdown(
 
 ---
 
+## Store data in [Supabase](https://supabase.com/)
+
+Steps to connect a database via Supabase:
+
+1. Create a Supabase account
+2. Create a Supabase project
+3. Copy your credentials
+
+---
+
+## Creating a project
+
+.leftcol[
+
+<center>
+<img src="images/supabase-project.jpg" width=100%>
+</center>
+
+]
+
+.rightcol[
+
+- Choose a project name (this is your "database")
+- Each database can have multiple tables
+- Choose a strong password
+
+]
+
+---
+
+## Set a password with `sd_set_password()`
+
+To access your database from R, you need to securely store your Supabase password.
+
+Do this in your R console like this:
+
+```{r}
+#| eval: false
+
+sd_set_password("my_password")
+```
+
+--
+
+This creates a `.Renvion` file in your project directory where your password lives. **Don't modify this file!**
+
+```
+SURVEYDOWN_PASSWORD=my_password
+```
+
+---
+
+## Copy your credentials
+
+.leftcol[
+
+Go to **Project Settings** in bottom-left corner, then click **Database** under **Configuration**
+
+Get your **Connection parameters**:
+
+<center>
+<img src="images/db-connection.jpg" width=90%>
+</center>
+
+]
+
+.rightcol[
+
+- Put them in your server code chunk.
+- Choose any table name you want to store your data.
+
+```{r}
+#| eval: false
+
+db <- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "any_table_name"
+)
+```
+
+]
+
+---
+
 class: inverse
 
 ```{r, echo=FALSE}
 countdown(
-  minutes = 15,
-  warn_when = 15,
-  update_every = 1,
-  top = 0,
-  right = 0,
+  minutes   = 7,
+  top       = 0,
+  right     = 0,
   font_size = '2em'
 )
 ```
 
 ## Your turn
 
-- Using your GW Google drive, create a new survey spreadsheet<br>(you may wish to copy-paste from [this one](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing))
-- Name your sheet "`[netID]_practice`", replacing "`[netID]`" with your GW Net ID<br>(e.g. "`jph_practice`")
-- Insert the content in your `practiceSurvey.qmd` file into your Google Sheet.
-- Using the class formr account, import your Google Sheet as a survey in formr (use the same "`[netID]_practice`" name for your survey). 
-- Create a run that includes your survey and a stop.
-- Test it!
+- Create a Supabase account and database
+- Copy your parameters into your `practiceSurvey.qmd` file.
+- Click "Run Document" and check that the database table is updating.
 
 ---
 
@@ -448,20 +528,26 @@ class: inverse, center
 # .fancy[Break]
 
 ```{r, echo=FALSE}
-
 countdown(
-    minutes      = 5,
-    warn_when    = 30,
-    update_every = 1,
-    left         = 0, right = 0, top = 1, bottom = 0,
-    margin       = "5%",
-    font_size    = "8em"
+    minutes   = 5,
+    left      = 0, right = 0, top = 1, bottom = 0,
+    margin    = "5%",
+    font_size = "8em"
 )
 ```
 
 ---
 
 ```{r child="topics/3.Rmd"}
+```
+
+---
+
+Content on deploying to shinyapps.io
+
+---
+
+```{r child="topics/4.Rmd"}
 ```
 
 ---
@@ -473,7 +559,6 @@ countdown(
 - ### **Part 1**: Intro
 - ### **Part 2**: Conjoint questions
 - ### **Part 3**: Other / demographic questions
-
 
 ---
 
