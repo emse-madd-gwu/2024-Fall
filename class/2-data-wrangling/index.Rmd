@@ -770,7 +770,7 @@ Features your _customer_ cares about
 
 ### Research Questions
 
-Decisions are trying to inform
+Decisions you are trying to inform
 
 ]
 
@@ -884,7 +884,7 @@ countdown(
 
 ## Team Proposals
 
-1. Re-arrange tables to sit with your team
+1. Sit with your team
 2. Discuss & identify your customer & potential competitors 
 3. Discuss & identify key _Product Attributes_ & _Research Questions_
 4. Start building out your model relationships table (copy from [this example](https://docs.google.com/spreadsheets/d/1Hmxfav_l1bubnaPkIiiMW0tZrFA-xblP9_ndN_6TB1I/edit?usp=sharing))
