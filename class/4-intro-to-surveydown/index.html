@@ -220,7 +220,11 @@ barposition: bottom
 
 ## 2. Setup code chunk
 
-The setup chunk is the first chunk, usually looks like this:
+The setup chunk is the first chunk, usually looks like this.
+
+It's where you load libraries and connect your database
+
+Ignore this for now - we'll connect our database soon!
 
 ````markdown
 ```{r}
@@ -236,6 +240,16 @@ library(surveydown)
 
 # Run initial setup function (essential - do not delete)
 sd_setup()
+
+# Setup database connection
+db &lt;- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "",
+  ignore = TRUE
+)
 ```
 ````
 
@@ -380,8 +394,8 @@ I recommend just writing html code, like this
 
 # The server code chunk
 
-- Connect to your database for storing data.
 - Set up custom configurations, like skip logic.
+- Launch the main server (`sd_server()` function).
 
 ---
 
@@ -450,19 +464,9 @@ config &lt;- sd_config(
 
 ---
 
-## Connecting a database
-
-This happens with `sd_database()`.
-
-Ignore this for now - we'll connect our database soon!
-
-For now you can see the data from chosen responses in a `data.csv` file written in the project folder.
-
----
-
 class: inverse
 
-<div class="countdown" id="timer_fa975a6e" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_233bfd30" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -517,7 +521,7 @@ Steps to connect a database via Supabase:
 .rightcol[
 
 - Choose a project name (this is your "database")
-- Each database can have multiple tables 
+- Each database can have multiple tables
 - Choose a strong password
 
 ]
@@ -526,7 +530,7 @@ Steps to connect a database via Supabase:
 
 ## Set a password with `sd_set_password()`
 
-To access your database from R, you need to securely store your Supabase password. 
+To access your database from R, you need to securely store your Supabase password.
 
 Do this in your R console like this:
 
@@ -562,7 +566,7 @@ Get your **Connection parameters**:
 .rightcol[
 
 - Put them in your server code chunk.
-- Choose any table name you want to store your data. 
+- Choose any table name you want to store your data.
 
 
 ``` r
@@ -581,19 +585,16 @@ db &lt;- sd_database(
 
 class: inverse
 
-<div class="countdown" id="timer_f442d049" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_9803544a" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ## Your turn
 
-- Using your GW Google drive, create a new survey spreadsheet&lt;br&gt;(you may wish to copy-paste from [this one](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing))
-- Name your sheet "`[netID]_practice`", replacing "`[netID]`" with your GW Net ID&lt;br&gt;(e.g. "`jph_practice`")
-- Insert the content in your `practiceSurvey.qmd` file into your Google Sheet.
-- Using the class formr account, import your Google Sheet as a survey in formr (use the same "`[netID]_practice`" name for your survey). 
-- Create a run that includes your survey and a stop.
-- Test it!
+- Create a Supabase account and database
+- Copy your parameters into your `practiceSurvey.qmd` file.
+- Click "Run Document" and check that the database table is updating in your Supabase table.
 
 ---
 
@@ -601,7 +602,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_22e6673c" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_2dafebc2" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -624,6 +625,26 @@ class: inverse, middle
 
 ---
 
+Content on deploying to shinyapps.io
+
+---
+
+
+
+class: inverse, middle
+
+# Week 4: .fancy[Intro to surveydown]
+
+### 1. surveydown basics
+### 2. Connect a database
+### 3. Make it live
+
+### BREAK
+
+### 4. .orange[Conjoint survey components]
+
+---
+
 # 3 Parts
 
 &lt;br&gt;
@@ -631,7 +652,6 @@ class: inverse, middle
 - ### **Part 1**: Intro
 - ### **Part 2**: Conjoint questions
 - ### **Part 3**: Other / demographic questions
-
 
 ---
 

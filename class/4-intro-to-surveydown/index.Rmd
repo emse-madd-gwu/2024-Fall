@@ -161,7 +161,11 @@ barposition: bottom
 
 ## 2. Setup code chunk
 
-The setup chunk is the first chunk, usually looks like this:
+The setup chunk is the first chunk, usually looks like this.
+
+It's where you load libraries and connect your database
+
+Ignore this for now - we'll connect our database soon!
 
 ````markdown
 `r ''````{r}
@@ -177,6 +181,16 @@ library(surveydown)
 
 # Run initial setup function (essential - do not delete)
 sd_setup()
+
+# Setup database connection
+db <- sd_database(
+  host   = "",
+  dbname = "",
+  port   = "",
+  user   = "",
+  table  = "",
+  ignore = TRUE
+)
 ```
 ````
 
@@ -307,8 +321,8 @@ I recommend just writing html code, like this
 
 # The server code chunk
 
-- Connect to your database for storing data.
 - Set up custom configurations, like skip logic.
+- Launch the main server (`sd_server()` function).
 
 ---
 
@@ -377,16 +391,6 @@ config <- sd_config(
   ), #<<
 )
 ```
-
----
-
-## Connecting a database
-
-This happens with `sd_database()`.
-
-Ignore this for now - we'll connect our database soon!
-
-For now you can see the data from chosen responses in a `data.csv` file written in the project folder.
 
 ---
 
@@ -519,7 +523,7 @@ countdown(
 
 - Create a Supabase account and database
 - Copy your parameters into your `practiceSurvey.qmd` file.
-- Click "Run Document" and check that the database table is updating.
+- Click "Run Document" and check that the database table is updating in your Supabase table.
 
 ---
 
@@ -775,7 +779,7 @@ class: center
 
 class: inverse, center, middle
 
-# [Blog post on conjoint in surveydown]()
+# [Blog post on conjoint in surveydown](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/)
 
 --
 
