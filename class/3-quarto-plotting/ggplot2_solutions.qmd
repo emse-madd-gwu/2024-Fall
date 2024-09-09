@@ -33,7 +33,10 @@ bears <- read_csv(here::here('data', 'bear_killings.csv'))
 
 If you put it at the "top level" inside `ggplot(aes(...))`, the mapping will apply to all levels. For example: 
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 bears %>% 
   count(month) %>%
   ggplot(aes(x = month, y = n)) +
@@ -43,7 +46,11 @@ bears %>%
 
 In contrast, if you put the `aes()` mapping inside a single geometry layer, it will only apply to that layer. For example, this will cause an error since the `geom_line()` part doesn't have an aesthetic mapping:
 
-```{r, fig.height=4, fig.width=6, error=TRUE}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+#| error: true
+
 bears %>% 
   count(month) %>% 
   ggplot() +
@@ -57,7 +64,10 @@ bears %>%
 
 Basic scatterplot: 
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot() +
   geom_point(aes(x = displ, y = hwy))
@@ -65,7 +75,10 @@ mpg %>%
 
 Change color for all points:
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot() +
   geom_point(aes(x = displ, y = hwy), color = 'blue')
@@ -73,7 +86,10 @@ mpg %>%
 
 To change color based on a variable, map the variable to `color` in `aes()`:
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   ggplot() +
   geom_point(aes(x = displ, y = hwy, color = class)) 
@@ -81,7 +97,10 @@ mpg %>%
 
 Map the shape instead of color (usually not a great idea):
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   ggplot() +
   geom_point(aes(x = displ, y = hwy, shape = class)) 
@@ -93,7 +112,10 @@ What happened to SUV?
 
 `geom_line()` connects all the dots:
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot() +
   geom_line(aes(x = displ, y = hwy))
@@ -103,7 +125,10 @@ The reason this looks messy is because `geom_line()` is trying to literally conn
 
 If you wanted a single "best-fit" trend line, use `geom_smooth()`:
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot() +
   geom_smooth(aes(x = displ, y = hwy))
@@ -111,7 +136,10 @@ mpg %>%
 
 Set `se = FALSE` to drop the error bounds:
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot() +
   geom_smooth(aes(x = displ, y = hwy), se = FALSE)
@@ -128,7 +156,10 @@ mpg %>%
 
 Basic bar plot of the counts:
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   count(class) %>% 
   ggplot() +
@@ -137,7 +168,10 @@ mpg %>%
 
 Re-order bars based on count using `reorder()`:
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   count(class) %>% 
   ggplot() +
@@ -146,7 +180,10 @@ mpg %>%
 
 To change the color for all bars, use `fill` (not `color`):
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   count(class) %>% 
   ggplot() +
@@ -155,7 +192,10 @@ mpg %>%
 
 To change color based on a variable, map the variable to `fill` in `aes()`:
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   count(class, drv) %>% # Note I had to include drv in the count too 
   ggplot() +
@@ -164,7 +204,10 @@ mpg %>%
 
 Use `position = 'dodge'` to change from stacked to side-by-side:
 
-```{r, fig.height=4, fig.width=8}
+```{r}
+#| fig-height: 4
+#| fig-width: 8
+
 mpg %>% 
   count(class, drv) %>% # Note I had to include drv in the count too 
   ggplot() +
@@ -175,20 +218,29 @@ mpg %>%
 
 # Practice
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>% 
   ggplot() +
   geom_smooth(aes(x = displ, y = hwy, color = drv))
 ```
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   count(class, drv) %>% 
   ggplot() +
   geom_col(aes(x = drv, y = n, fill = class), width = 0.7)
 ```
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>% 
   ggplot(aes(x = displ, y = hwy)) +
   geom_point(aes(color = class)) + 
@@ -203,7 +255,10 @@ Facets make multiple small charts and are useful when you have many levels in a 
 
 For example, this plot has too many color categories for the color to be useful:
 
-```{r, fig.height=4, fig.width=7}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+
 mpg %>%
   ggplot(aes(x = displ, y = hwy)) +
   geom_point(aes(color = class))
@@ -211,7 +266,10 @@ mpg %>%
 
 Instead, we can use `facet_wrap()` to show multiple charts of each vehicle class:
 
-```{r, fig.height=9, fig.width=10}
+```{r}
+#| fig-height: 9
+#| fig-width: 10
+
 mpg %>%
   ggplot(aes(x = displ, y = hwy)) +
   geom_point() +
@@ -220,7 +278,10 @@ mpg %>%
 
 You can also use `facet_grid()` to facet by two variables:
 
-```{r, fig.height=7, fig.width=10}
+```{r}
+#| fig-height: 7
+#| fig-width: 10
+
 mpg %>%
   ggplot(aes(x = displ, y = hwy)) +
   geom_point() +
@@ -231,7 +292,10 @@ mpg %>%
 
 # Extra Practice
 
-```{r, fig.height=5, fig.width=7}
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+
 bears %>%
   count(year, gender) %>%
   ggplot() +
@@ -245,7 +309,10 @@ bears %>%
   theme_bw()
 ```
 
-```{r, fig.height=4, fig.width=6}
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+
 mpg %>%
     mutate(manufacturer = str_to_title(manufacturer)) %>%
     group_by(manufacturer) %>%

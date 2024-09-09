@@ -34,6 +34,41 @@ theme_set(theme_gray(base_size = 16))
 
 ---
 
+class: inverse
+
+# Quiz 1
+
+```{r, echo=FALSE}
+countdown(
+    minutes = 10,
+    warn_when = 30,
+    update_every = 1,
+    bottom = 0,
+    left = 0,
+    font_size = '4em'
+)
+```
+
+.leftcol[
+
+### Download the template from the #class channel
+
+### Make sure you unzip it!
+
+### When done, submit your `quiz1.qmd` on Blackboard
+
+]
+
+.rightcol[
+
+<center>
+<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
+</center>
+
+]
+
+---
+
 ```{r child="topics/0.Rmd"}
 ```
 
@@ -599,41 +634,6 @@ countdown(
 - How do the the number of bear attacks on men vs women compare?
 
 HINT: Use `bears %>% count(variable)` to count how many rows are in the data for each unique value of `variable`
-
-]
-
----
-
-class: inverse
-
-# Quiz 1
-
-```{r, echo=FALSE}
-countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    bottom = 0,
-    left = 0,
-    font_size = '4em'
-)
-```
-
-.leftcol[
-
-### Download the template from the #class channel
-
-### Make sure you unzip it!
-
-### When done, submit your `quiz1.qmd` on Blackboard
-
-]
-
-.rightcol[
-
-<center>
-<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
-</center>
 
 ]
 

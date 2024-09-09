@@ -38,7 +38,7 @@ files4 <- c(
     'practiceSurvey.qmd'
 )
 
-files <- files2
+files <- files3
 
 # Create zip files of class notes
 zip::zip(
