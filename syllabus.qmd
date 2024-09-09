@@ -10,6 +10,8 @@ execute:
 
 ```{r}
 source("_common.R")
+
+set.seed(5678)
 ```
 
 # Course Information
