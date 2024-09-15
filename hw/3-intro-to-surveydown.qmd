@@ -24,7 +24,7 @@ Next week we will start getting into designing conjoint surveys for our projects
 To get familiar with the platform, read the following:
 
 1. The [Introducing Surveydown](https://surveydown.org/blog/2024-08-21-introducing-surveydown/) blog post on the surveydown website.
-2. The [Getting Started](https://surveydown.org/get-started) documentation on the surveydown website.
+2. The [Getting Started](https://surveydown.org/getting-started) documentation on the surveydown website.
 3. The [Survey Components](https://surveydown.org/survey-components) documentation on the surveydown website.
 
 **Take notes** as you read the blog post and go through the documentation.
