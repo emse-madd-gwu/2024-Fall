@@ -86,11 +86,7 @@ sd_question(
   label  = "In what year were you born?",
   option = years
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'page2')
 ```
 
@@ -107,11 +103,7 @@ sd_question(
   label = "Choose a color:",
   option = c("Red" = "red", "Blue" = "blue")
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'nasa_data')
 ```
 
@@ -153,8 +145,6 @@ data2020 <- data %>%
 ```
 
 The temperature anomaly in 2020 was `r data2020$meanTemp` degrees Celsius.
-
-<br>
 
 ```{r}
 sd_next(next_page = 'image')
