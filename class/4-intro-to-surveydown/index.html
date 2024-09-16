@@ -138,7 +138,9 @@ class: middle
 .rightcol[
 
 &lt;center&gt;
-&lt;img src="images/survey-screenshot.png" width=400&gt;
+&lt;img src="images/components_01.jpeg" width=400&gt;
+&lt;img src="images/components_02.jpeg" width=400&gt;
+&lt;img src="images/components_03.jpeg" width=400&gt;
 &lt;/center&gt;
 
 ]
@@ -156,6 +158,15 @@ The YAML header is at the top of the `.qmd` file.
 server: shiny
 filters: [surveydown]
 ---
+```
+
+--
+
+Update / install the extension:
+
+
+``` r
+surveydown::sd_update_extension()
 ```
 
 ---
@@ -194,7 +205,7 @@ You can modify the survey progress bar with the `barcolor` and `barposition` key
 
 .leftcol[
 
-Change to any color you want with the `barcolor` key:
+Change to any color with `barcolor`:
 
 ``` yaml
 ---
@@ -206,7 +217,7 @@ barcolor: #768692
 
 .rightcol[
 
-Change the position, use `top`, `bottom`, or `none`
+Change position: `top`, `bottom`, or `none`
 
 ``` yaml
 ---
@@ -218,13 +229,22 @@ barposition: bottom
 
 ---
 
+.leftcol[
+
 ## 2. Setup code chunk
 
-The setup chunk is the first chunk, usually looks like this.
+First chunk:
 
-It's where you load libraries and connect your database
+- Load libraries 
+- Connect to database
 
-Ignore this for now - we'll connect our database soon!
+Ignore this for now:
+
+`ignore = TRUE`
+
+]
+
+.rightcol[
 
 ````markdown
 ```{r}
@@ -252,6 +272,8 @@ db &lt;- sd_database(
 )
 ```
 ````
+
+]
 
 ---
 
@@ -466,7 +488,7 @@ config &lt;- sd_config(
 
 class: inverse
 
-<div class="countdown" id="timer_233bfd30" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_33b060fd" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -585,9 +607,9 @@ db &lt;- sd_database(
 
 class: inverse
 
-<div class="countdown" id="timer_9803544a" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_f6ebafbd" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ## Your turn
@@ -602,7 +624,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_2dafebc2" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_db085e8e" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -625,7 +647,9 @@ class: inverse, middle
 
 ---
 
-Content on deploying to shinyapps.io
+class: middle, center
+
+# Follow [instructions](https://surveydown.org/deployment) on surveydown.org
 
 ---
 
@@ -868,7 +892,7 @@ class: center
 
 class: inverse, center, middle
 
-# [Blog post on conjoint in surveydown]()
+# [Blog post on conjoint in surveydown](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/)
 
 --
 

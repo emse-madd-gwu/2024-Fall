@@ -59,8 +59,6 @@ db <- sd_database(
 
 Add content here
 
-<br>
-
 ```{r}
 sd_next(next_page = 'page2')
 ```
@@ -70,8 +68,6 @@ sd_next(next_page = 'page2')
 ::: {#page2 .sd-page}
 
 More content here
-
-<br>
 
 ```{r}
 sd_next(next_page = 'end')

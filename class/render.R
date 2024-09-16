@@ -32,16 +32,14 @@ files3 <- c(
 )
 
 files4 <- c(
-    '4-intro-to-formr.Rproj',
-    'demoSurvey.qmd',
-    'practiceSurvey_solutions.qmd',
-    'practiceSurvey.qmd'
+    'demoSurvey',
+    'practiceSurvey'
 )
 
-files <- files3
+files <- files4
 
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = c(files, paste0(lesson, ".Rproj"))
+    files = files
 )

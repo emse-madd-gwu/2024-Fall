@@ -79,7 +79,9 @@ class: middle
 .rightcol[
 
 <center>
-<img src="images/survey-screenshot.png" width=400>
+<img src="images/components_01.jpeg" width=400>
+<img src="images/components_02.jpeg" width=400>
+<img src="images/components_03.jpeg" width=400>
 </center>
 
 ]
@@ -97,6 +99,16 @@ The YAML header is at the top of the `.qmd` file.
 server: shiny
 filters: [surveydown]
 ---
+```
+
+--
+
+Update / install the extension:
+
+```{r}
+#| eval: false
+
+surveydown::sd_update_extension()
 ```
 
 ---
@@ -135,7 +147,7 @@ You can modify the survey progress bar with the `barcolor` and `barposition` key
 
 .leftcol[
 
-Change to any color you want with the `barcolor` key:
+Change to any color with `barcolor`:
 
 ``` yaml
 ---
@@ -147,7 +159,7 @@ barcolor: #768692
 
 .rightcol[
 
-Change the position, use `top`, `bottom`, or `none`
+Change position: `top`, `bottom`, or `none`
 
 ``` yaml
 ---
@@ -159,13 +171,22 @@ barposition: bottom
 
 ---
 
+.leftcol[
+
 ## 2. Setup code chunk
 
-The setup chunk is the first chunk, usually looks like this.
+First chunk:
 
-It's where you load libraries and connect your database
+- Load libraries 
+- Connect to database
 
-Ignore this for now - we'll connect our database soon!
+Ignore this for now:
+
+`ignore = TRUE`
+
+]
+
+.rightcol[
 
 ````markdown
 `r ''````{r}
@@ -193,6 +214,8 @@ db <- sd_database(
 )
 ```
 ````
+
+]
 
 ---
 
@@ -512,7 +535,7 @@ class: inverse
 
 ```{r, echo=FALSE}
 countdown(
-  minutes   = 7,
+  minutes   = 10,
   top       = 0,
   right     = 0,
   font_size = '2em'
@@ -547,7 +570,9 @@ countdown(
 
 ---
 
-Content on deploying to shinyapps.io
+class: middle, center
+
+# Follow [instructions](https://surveydown.org/deployment) on surveydown.org
 
 ---
 
