@@ -6,6 +6,6 @@ class: inverse, middle
 ### 1. Defining choice questions in R
 ### 2. .orange[Displaying choice questions in Quarto]
 
-### QUIZ 2
+### BREAK
 
-### 3. Choice questions in formr
+### 3. Choice questions in surveydown

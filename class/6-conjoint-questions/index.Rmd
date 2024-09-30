@@ -198,15 +198,23 @@ class: center, middle
 
 **Simple approach**: Insert a footnote with `^[]` 
 
-### markdown
+.leftcol[
 
-`The Eiffel Tower is 324 meters tall^[From the [Eiffel Tower wikipedia page](https://en.wikipedia.org/wiki/Eiffel_Tower)]`
+### This markdown...
 
-### render
+`The Eiffel Tower is 324 meters tall^[From the [Eiffel Tower wikipedia page](https://en.wikipedia.org/wiki`<br>`/Eiffel_Tower)]`
+
+]
+
+.rightcol[
+
+### ...renders as this
 
 The Eiffel Tower is 324 meters tall<sup>1</sup>
 
 .font70[<sup>1</sup>From the [Eiffel Tower wikipedia page](https://en.wikipedia.org/wiki/Eiffel_Tower)]
+
+]
 
 ---
 
@@ -223,6 +231,41 @@ You can insert citations with `[@citekey]`, and a "References" table will be aut
 <br>
 
 **Footnotes are perfectly fine for this class**
+
+---
+
+class: inverse
+
+# Quiz 2
+
+```{r, echo=FALSE}
+countdown(
+    minutes = 10,
+    warn_when = 30,
+    update_every = 1,
+    bottom = 0,
+    left = 0,
+    font_size = '4em'
+)
+```
+
+.leftcol[
+
+### Download the template from the #class channel
+
+### Make sure you unzip it!
+
+### When done, submit your `quiz2.qmd` on Blackboard
+
+]
+
+.rightcol[
+
+<center>
+<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
+</center>
+
+]
 
 ---
 
@@ -598,38 +641,18 @@ You should be able to render the file to visually test how one of your choice qu
 
 ---
 
-class: inverse
+class: inverse, center
 
-# Quiz 2
+# .fancy[Break]
 
 ```{r, echo=FALSE}
 countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    bottom = 0,
-    left = 0,
-    font_size = '4em'
+    minutes   = 5,
+    left      = 0, right = 0, top = 1, bottom = 0,
+    margin    = "5%",
+    font_size = "8em"
 )
 ```
-
-.leftcol[
-
-### Download the template from the #class channel
-
-### Make sure you unzip it!
-
-### When done, submit your `quiz2.qmd` on Blackboard
-
-]
-
-.rightcol[
-
-<center>
-<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
-</center>
-
-]
 
 ---
 
