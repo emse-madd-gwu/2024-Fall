@@ -289,6 +289,12 @@ class: center
 
 ---
 
+class: middle, inverse, center
+
+# Open `logitr-cars.Rproj`
+
+---
+
 ## .center[We'll be using the [{cbcTools} package](https://jhelvy.github.io/cbcTools/) today]
 
 ```{r, eval=FALSE}
@@ -389,12 +395,6 @@ kable(t(design_nochoice_q2))
 
 ---
 
-class: middle, inverse, center
-
-# Open `logitr-cars.Rproj`
-
----
-
 # Attribute-specific features
 
 Some attributes may only be valid for certain levels of other attributes
@@ -406,6 +406,8 @@ Some attributes may only be valid for certain levels of other attributes
 <br>
 
 To implement this, edit `profiles` prior to using `cbc_design()`
+
+(see `logitr-cars` code 1.2)
 
 ---
 
@@ -438,13 +440,13 @@ countdown(
 
 ## Your Turn
 
-1. With your team, discuss the specific choice question design for your project
+With your team, discuss the specific choice question design for your project
 
 - Regular or labeled?
 - Include a "none" option (outside good) or not?
 - Include restrictions?
 
-2. Edit the `make-choice-questions.R` file to design your choice questions.
+Edit the `make-choice-questions.R` file to design your choice questions.
 
 ---
 
@@ -453,9 +455,9 @@ countdown(
 
 ---
 
-# .center[Displaying your choice questions online]
+# .center[Displaying choice questions in your survey]
 
-### 1. Export your choice questions as a .csv file
+### 1. Export your design as a .csv file
 ### 2. Upload your .csv file somewhere (e.g. GitHub)
 ### 3. Use R code to extract the values to display 
 ### 4. Use RMarkdown to display the values
@@ -605,12 +607,12 @@ kable(t(alts))
 
 class: center 
 
-## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
+## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint) repo
 
-(code used in the related [blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
+(code used in the related [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/))
 
 <center>
-<img src="images/formr4conjoint.png" width=870>
+<img src="images/demo-repo.png" width=600>
 </center>
 
 ---
