@@ -26,10 +26,10 @@ output:
 ```{r}
 #| include: false
 
-# For this class
-
-# make surveys
 library(cbcTools)
+library(surveydown)
+library(glue)
+set.seed(123)
 
 # Define profiles with attributes and levels
 profiles <- cbc_profiles(
@@ -279,13 +279,13 @@ countdown(
 
 ---
 
-class: center 
+## Download & unzip two repos:
 
-## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo from GitHub
+## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip) 
 
-<center>
-<img src="images/logitr-cars.png" width=900>
-</center>
+## - [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
+
+(code used in the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on conjoint in surveydown)
 
 ---
 
@@ -440,6 +440,8 @@ countdown(
 
 ## Your Turn
 
+## Open `survey.Rproj` in "demo-choice-based-conjoint"
+
 With your team, discuss the specific choice question design for your project
 
 - Regular or labeled?
@@ -457,113 +459,311 @@ Edit the `make-choice-questions.R` file to design your choice questions.
 
 # .center[Displaying choice questions in your survey]
 
-### 1. Export your design as a .csv file
-### 2. Upload your .csv file somewhere (e.g. GitHub)
-### 3. Use R code to extract the values to display 
-### 4. Use RMarkdown to display the values
+### 1. Read in the design file (`choice_questions.csv`)
+### 2. Sample and store a random respondent ID
+### 3. Filter the design for the respondentID
+### 4. Define a function to create question options
+### 5. Create the options for each choice question
+### 6. Create each choice question (6 in total)
 
 ---
 
-### 1. Export your choice questions as a .csv file
+### 1. Read in the design file (`choice_questions.csv`)
 
-```{r, eval=FALSE}
-write_csv(design, here('choice_questions.csv'))
+```{r}
+design <- readr::read_csv("choice_questions.csv")
 ```
+
+---
+
+### 2. Sample and store a random respondent ID
+
+Sample a random respondentID
+
+```{r}
+respondentID <- sample(design$respID, 1)
+```
+
+Store the respondentID
+
+```{r}
+#| eval: false
+
+sd_store_value(respondentID, "respID")
+```
+
+In your survey data, you will have a `respID` column
+
+---
+
+### 3. Filter the design for the respondentID
+
+```{r}
+df <- design %>%
+  filter(respID == respondentID) %>%
+  mutate(image = paste0("images/", image))
+```
+
+Images are stored in `"images"` folder, so we paste on that path
 
 --
 
-### 2. Upload your .csv file somewhere
-
-.leftcol[.center[
-
-### Inside a formr run (private)
-
-<center>
-<img src="images/upload.png" width=500>
-</center>
-
-]]
-
-.rightcol[.center[
-
-### github.com (public)
-
-.font200[[`r fa("github")`](https://github.com/)]
-
-[apples example](https://github.com/jhelvy/formr4conjoint)
-
-]]
-
----
-
-## .center[Use R code to extract the values to display]
-
-### - Read `choice_questions.csv` from web
-### - Randomly choose a respondent ID
-### - Filter rows for that respondent ID
-### - Serialize the data frame to json format
-
----
-
-# .center[Side note on serializing a data frame]
-
-.center[Converts a data frame to one long string]
-
-```{r, echo=FALSE}
-df <- design %>%
-  filter(obsID == 1) %>% 
-  select(-respID, -qID, -obsID)
-```
+Result looks like this:
 
 ```{r}
-df
-```
-
-```{r}
-df_json <- jsonlite::serializeJSON(df)
-df_json
+head(df)
 ```
 
 ---
-
-# .center[Use RMarkdown to display the values]
 
 .leftcol[
 
-Create separate data frames for each alternative
+### 4. Define a function to create question options
+
+]
+
+.rightcol[.code70[
 
 ```{r}
-library(dplyr)
+make_cbc_options <- function(df) {
+  alt1 <- df |> filter(altID == 1)
+  alt2 <- df |> filter(altID == 2)
+  alt3 <- df |> filter(altID == 3)
 
-alts <- jsonlite::unserializeJSON(df_json)
-alt1 <- alts %>% filter(altID == 1)
-alt2 <- alts %>% filter(altID == 2)
-alt3 <- alts %>% filter(altID == 3)
+  options <- c("option_1", "option_2", "option_3")
+
+  names(options) <- c(
+    glue("
+      **Option 1**<br>
+      <img src='{alt1$image}' width=100><br>
+      **Type**: {alt1$type}<br>
+      **Price**: $ {alt1$price} / lb
+    "),
+    glue("
+      **Option 2**<br>
+      <img src='{alt2$image}' width=100><br>
+      **Type**: {alt2$type}<br>
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**<br>
+      <img src='{alt3$image}' width=100><br>
+      **Type**: {alt3$type}<br>
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
+```
+
+]]
+
+---
+
+.leftcol[
+
+### 4. Define a function to create question options
+
+Make one-row data frames for each alternative.
+
+For example, `alt1` looks like this:
+
+```{r}
+#| echo: false
+
+alt1 <- df %>% 
+  filter(qID == 1) %>% 
+  filter(altID == 1)
+
+glimpse(alt1)
 ```
 
 ]
 
---
+.rightcol[.code70[
+
+```{r}
+#| eval: false
+
+make_cbc_options <- function(df) {
+  alt1 <- df |> filter(altID == 1) #<<
+  alt2 <- df |> filter(altID == 2) #<<
+  alt3 <- df |> filter(altID == 3) #<<
+
+  options <- c("option_1", "option_2", "option_3")
+
+  names(options) <- c(
+    glue("
+      **Option 1**<br>
+      <img src='{alt1$image}' width=100><br>
+      **Type**: {alt1$type}<br>
+      **Price**: $ {alt1$price} / lb
+    "),
+    glue("
+      **Option 2**<br>
+      <img src='{alt2$image}' width=100><br>
+      **Type**: {alt2$type}<br>
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**<br>
+      <img src='{alt3$image}' width=100><br>
+      **Type**: {alt3$type}<br>
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
+```
+
+]]
+
+---
+
+.leftcol[
+
+### 4. Define a function to create question options
+
+```{r}
+alt1[c('image', 'type', 'price')]
+```
+
+Highlighted section renders as:
+
+```{r}
+#| echo: false
+
+cat(glue("
+  **Option 1**<br>
+  <img src='{alt1$image}' width=100><br>
+  **Type**: {alt1$type}<br>
+  **Price**: $ {alt1$price} / lb
+"))
+```
+
+]
+
+.rightcol[.code70[
+
+```{r}
+#| eval: false
+
+make_cbc_options <- function(df) {
+  alt1 <- df |> filter(altID == 1)
+  alt2 <- df |> filter(altID == 2)
+  alt3 <- df |> filter(altID == 3)
+
+  options <- c("option_1", "option_2", "option_3")
+
+  names(options) <- c(
+    glue("  #<<
+      **Option 1**<br>  #<<
+      <img src='{alt1$image}' width=100><br>  #<<
+      **Type**: {alt1$type}<br>  #<<
+      **Price**: $ {alt1$price} / lb  #<<
+    "),  #<<
+    glue("
+      **Option 2**<br>
+      <img src='{alt2$image}' width=100><br>
+      **Type**: {alt2$type}<br>
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**<br>
+      <img src='{alt3$image}' width=100><br>
+      **Type**: {alt3$type}<br>
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
+```
+
+]]
+
+---
+
+### 5. Create the options for each choice question
+
+```{r}
+cbc1_options <- make_cbc_options(df |> filter(qID == 1))
+```
+
+Value stored in your data: 
+
+```{r}
+#| echo: false
+
+cat(cbc1_options[1])
+```
+
+.leftcol[
+
+Label:
+
+```{r}
+#| echo: false
+
+names(cbc1_options[1])
+```
+
+]
 
 .rightcol[
 
-Use RMarkdown formatting to display content in each alternative
+Renders as:
 
-```{r, eval=FALSE}
-***Option 1**
+```{r}
+#| echo: false
 
-***Price**: $ `r alt1$price`
-***Powertrain**: $ `r alt1$powertrain`
-***Fuel Economy**: `r alt1$fuelEconomy` mpg
-***0-60 Accel. Time**: `r alt1$accelTime` s
+htmltools::HTML(names(cbc1_options[1]))
 ```
 
-**Option 1**
+]
 
-**Price**: $ `r alt1$price`<br>
-**Powertrain**: $ `r alt1$powertrain`<br>
-**Fuel Economy**: `r alt1$fuelEconomy` mpg<br>
-**0-60 Accel. Time**: `r alt1$accelTime` s
+---
+
+### 5. Create the options for each choice question
+
+Now make the options for each question
+
+```{r}
+cbc1_options <- make_cbc_options(df |> filter(qID == 1))
+cbc2_options <- make_cbc_options(df |> filter(qID == 2))
+cbc3_options <- make_cbc_options(df |> filter(qID == 3))
+cbc4_options <- make_cbc_options(df |> filter(qID == 4))
+cbc5_options <- make_cbc_options(df |> filter(qID == 5))
+cbc6_options <- make_cbc_options(df |> filter(qID == 6))
+```
+
+---
+
+### 6. Create each choice question (6 in total)
+
+.leftcol[
+
+Code:
+
+```{r}
+#| eval: false
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q1',
+  label  = "(1 of 6) If these were your only options, which would you choose?",
+  option = cbc1_options
+)
+```
+
+]
+
+.rightcol[
+
+Renders as:
+
+<center>
+<img src="images/example.png" width=100%>
+</center>
 
 ]
 
@@ -602,18 +802,6 @@ kable(t(alts))
 ```
 
 ]
-
----
-
-class: center 
-
-## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint) repo
-
-(code used in the related [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/))
-
-<center>
-<img src="images/demo-repo.png" width=600>
-</center>
 
 ---
 
