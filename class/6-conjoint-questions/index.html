@@ -818,7 +818,7 @@ class: inverse
 
 # Quiz 2
 
-<div class="countdown" id="timer_ee7389f9" data-warn-when="30" data-update-every="1" tabindex="0" style="bottom:0;left:0;font-size:4em;">
+<div class="countdown" id="timer_1baad1c0" data-warn-when="30" data-update-every="1" tabindex="0" style="bottom:0;left:0;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -873,13 +873,13 @@ class: inverse, middle
 
 ---
 
-class: center 
+## Download &amp; unzip two repos:
 
-## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo from GitHub
+## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip) 
 
-&lt;center&gt;
-&lt;img src="images/logitr-cars.png" width=900&gt;
-&lt;/center&gt;
+## - [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
+
+(code used in the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on conjoint in surveydown)
 
 ---
 
@@ -927,24 +927,24 @@ Any combination of attributes can be shown in each choice question
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $25 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 6 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
   &lt;/tr&gt;
@@ -973,20 +973,20 @@ Any combination of attributes can be shown in each choice question
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 6 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1020,13 +1020,13 @@ One attribute is used as the "label" - choice options are fixed according to the
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 6 (s) &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1047,16 +1047,16 @@ One attribute is used as the "label" - choice options are fixed according to the
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1087,30 +1087,30 @@ A "none" option means they can choose an "other" option
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1134,27 +1134,27 @@ A "none" option means they can choose an "other" option
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $25 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 20 (mpg) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30 (mpg) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (mpg) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 (s) &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
@@ -1198,12 +1198,14 @@ Sometimes you may want to not allow a specific combination of features  -  use `
 
 class: inverse
 
-<div class="countdown" id="timer_0bc2fa29" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_59b50618" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ## Your Turn
+
+## Open `survey.Rproj` in "demo-choice-based-conjoint"
 
 With your team, discuss the specific choice question design for your project
 
@@ -1232,125 +1234,333 @@ class: inverse, middle
 
 # .center[Displaying choice questions in your survey]
 
-### 1. Export your design as a .csv file
-### 2. Upload your .csv file somewhere (e.g. GitHub)
-### 3. Use R code to extract the values to display 
-### 4. Use RMarkdown to display the values
+### 1. Read in the design file (`choice_questions.csv`)
+### 2. Sample and store a random respondent ID
+### 3. Filter the design for the respondentID
+### 4. Define a function to create question options
+### 5. Create the options for each choice question
+### 6. Create each choice question (6 in total)
 
 ---
 
-### 1. Export your choice questions as a .csv file
+### 1. Read in the design file (`choice_questions.csv`)
 
 
 ``` r
-write_csv(design, here('choice_questions.csv'))
+design &lt;- readr::read_csv("choice_questions.csv")
 ```
+
+---
+
+### 2. Sample and store a random respondent ID
+
+Sample a random respondentID
+
+
+``` r
+respondentID &lt;- sample(design$respID, 1)
+```
+
+Store the respondentID
+
+
+``` r
+sd_store_value(respondentID, "respID")
+```
+
+In your survey data, you will have a `respID` column
+
+---
+
+### 3. Filter the design for the respondentID
+
+
+``` r
+df &lt;- design %&gt;%
+  filter(respID == respondentID) %&gt;%
+  mutate(image = paste0("images/", image))
+```
+
+Images are stored in `"images"` folder, so we paste on that path
 
 --
 
-### 2. Upload your .csv file somewhere
-
-.leftcol[.center[
-
-### Inside a formr run (private)
-
-&lt;center&gt;
-&lt;img src="images/upload.png" width=500&gt;
-&lt;/center&gt;
-
-]]
-
-.rightcol[.center[
-
-### github.com (public)
-
-.font200[[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>](https://github.com/)]
-
-[apples example](https://github.com/jhelvy/formr4conjoint)
-
-]]
-
----
-
-## .center[Use R code to extract the values to display]
-
-### - Read `choice_questions.csv` from web
-### - Randomly choose a respondent ID
-### - Filter rows for that respondent ID
-### - Serialize the data frame to json format
-
----
-
-# .center[Side note on serializing a data frame]
-
-.center[Converts a data frame to one long string]
-
-
+Result looks like this:
 
 
 ``` r
-df
+head(df)
 ```
 
 ```
-#&gt;   profileID altID price fuelEconomy accelTime powertrain
-#&gt; 1        19     1    15          20         8   Gasoline
-#&gt; 2         4     2    15          25         6   Gasoline
-#&gt; 3        44     3    20          30         7   Electric
-```
-
-
-``` r
-df_json &lt;- jsonlite::serializeJSON(df)
-df_json
-```
-
-```
-#&gt; {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["profileID","altID","price","fuelEconomy","accelTime","powertrain"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3]}},"value":[{"type":"integer","attributes":{},"value":[19,4,44]},{"type":"integer","attributes":{},"value":[1,2,3]},{"type":"double","attributes":{},"value":[15,15,20]},{"type":"double","attributes":{},"value":[20,25,30]},{"type":"double","attributes":{},"value":[8,6,7]},{"type":"integer","attributes":{"levels":{"type":"character","attributes":{},"value":["Gasoline","Electric"]},"class":{"type":"character","attributes":{},"value":["factor"]}},"value":[1,1,2]}]}
+#&gt; # A tibble: 6 × 9
+#&gt;   respID   qID altID obsID profileID type          price freshness image                  
+#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                  
+#&gt; 1   1646     1     1 13161        37 Gala            1   Average   images/gala.jpg        
+#&gt; 2   1646     1     2 13161         3 Honeycrisp      1   Excellent images/honeycrisp.jpg  
+#&gt; 3   1646     1     3 13161        47 Gala            2   Average   images/gala.jpg        
+#&gt; 4   1646     2     1 13162        51 Fuji            2.5 Average   images/fuji.jpg        
+#&gt; 5   1646     2     2 13162        31 Fuji            4   Excellent images/fuji.jpg        
+#&gt; 6   1646     2     3 13162        75 Red Delicious   1   Poor      images/redDelicious.jpg
 ```
 
 ---
-
-# .center[Use RMarkdown to display the values]
 
 .leftcol[
 
-Create separate data frames for each alternative
+### 4. Define a function to create question options
+
+]
+
+.rightcol[.code70[
 
 
 ``` r
-library(dplyr)
+make_cbc_options &lt;- function(df) {
+  alt1 &lt;- df |&gt; filter(altID == 1)
+  alt2 &lt;- df |&gt; filter(altID == 2)
+  alt3 &lt;- df |&gt; filter(altID == 3)
 
-alts &lt;- jsonlite::unserializeJSON(df_json)
-alt1 &lt;- alts %&gt;% filter(altID == 1)
-alt2 &lt;- alts %&gt;% filter(altID == 2)
-alt3 &lt;- alts %&gt;% filter(altID == 3)
+  options &lt;- c("option_1", "option_2", "option_3")
+
+  names(options) &lt;- c(
+    glue("
+      **Option 1**&lt;br&gt;
+      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt1$type}&lt;br&gt;
+      **Price**: $ {alt1$price} / lb
+    "),
+    glue("
+      **Option 2**&lt;br&gt;
+      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt2$type}&lt;br&gt;
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**&lt;br&gt;
+      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt3$type}&lt;br&gt;
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
+```
+
+]]
+
+---
+
+.leftcol[
+
+### 4. Define a function to create question options
+
+Make one-row data frames for each alternative.
+
+For example, `alt1` looks like this:
+
+
+```
+#&gt; Rows: 1
+#&gt; Columns: 9
+#&gt; $ respID    &lt;dbl&gt; 1646
+#&gt; $ qID       &lt;dbl&gt; 1
+#&gt; $ altID     &lt;dbl&gt; 1
+#&gt; $ obsID     &lt;dbl&gt; 13161
+#&gt; $ profileID &lt;dbl&gt; 37
+#&gt; $ type      &lt;chr&gt; "Gala"
+#&gt; $ price     &lt;dbl&gt; 1
+#&gt; $ freshness &lt;chr&gt; "Average"
+#&gt; $ image     &lt;chr&gt; "images/gala.jpg"
 ```
 
 ]
 
---
-
-.rightcol[
-
-Use RMarkdown formatting to display content in each alternative
+.rightcol[.code70[
 
 
 ``` r
-***Option 1**
+make_cbc_options &lt;- function(df) {
+* alt1 &lt;- df |&gt; filter(altID == 1)
+* alt2 &lt;- df |&gt; filter(altID == 2)
+* alt3 &lt;- df |&gt; filter(altID == 3)
 
-***Price**: $ `r alt1$price`
-***Powertrain**: $ `r alt1$powertrain`
-***Fuel Economy**: `r alt1$fuelEconomy` mpg
-***0-60 Accel. Time**: `r alt1$accelTime` s
+  options &lt;- c("option_1", "option_2", "option_3")
+
+  names(options) &lt;- c(
+    glue("
+      **Option 1**&lt;br&gt;
+      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt1$type}&lt;br&gt;
+      **Price**: $ {alt1$price} / lb
+    "),
+    glue("
+      **Option 2**&lt;br&gt;
+      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt2$type}&lt;br&gt;
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**&lt;br&gt;
+      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt3$type}&lt;br&gt;
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
 ```
 
-**Option 1**
+]]
 
-**Price**: $ 15&lt;br&gt;
-**Powertrain**: $ Gasoline&lt;br&gt;
-**Fuel Economy**: 20 mpg&lt;br&gt;
-**0-60 Accel. Time**: 8 s
+---
+
+.leftcol[
+
+### 4. Define a function to create question options
+
+
+``` r
+alt1[c('image', 'type', 'price')]
+```
+
+```
+#&gt; # A tibble: 1 × 3
+#&gt;   image           type  price
+#&gt;   &lt;chr&gt;           &lt;chr&gt; &lt;dbl&gt;
+#&gt; 1 images/gala.jpg Gala      1
+```
+
+Highlighted section renders as:
+
+
+```
+#&gt; **Option 1**&lt;br&gt;
+#&gt; &lt;img src='images/gala.jpg' width=100&gt;&lt;br&gt;
+#&gt; **Type**: Gala&lt;br&gt;
+#&gt; **Price**: $ 1 / lb
+```
+
+]
+
+.rightcol[.code70[
+
+
+``` r
+make_cbc_options &lt;- function(df) {
+  alt1 &lt;- df |&gt; filter(altID == 1)
+  alt2 &lt;- df |&gt; filter(altID == 2)
+  alt3 &lt;- df |&gt; filter(altID == 3)
+
+  options &lt;- c("option_1", "option_2", "option_3")
+
+  names(options) &lt;- c(
+*   glue("
+*     **Option 1**&lt;br&gt;
+*     &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;
+*     **Type**: {alt1$type}&lt;br&gt;
+*     **Price**: $ {alt1$price} / lb
+*   "),
+    glue("
+      **Option 2**&lt;br&gt;
+      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt2$type}&lt;br&gt;
+      **Price**: $ {alt2$price} / lb
+    "),
+    glue("
+      **Option 3**&lt;br&gt;
+      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;
+      **Type**: {alt3$type}&lt;br&gt;
+      **Price**: $ {alt3$price} / lb
+    ")
+  )
+  return(options)
+}
+```
+
+]]
+
+---
+
+### 5. Create the options for each choice question
+
+
+``` r
+cbc1_options &lt;- make_cbc_options(df |&gt; filter(qID == 1))
+```
+
+Value stored in your data: 
+
+
+```
+#&gt; option_1
+```
+
+.leftcol[
+
+Label:
+
+
+```
+#&gt; [1] "  **Option 1**&lt;br&gt;\n  &lt;img src='images/gala.jpg' width=100&gt;&lt;br&gt;\n  **Type**: Gala&lt;br&gt;\n  **Price**: $ 1 / lb"
+```
+
+]
+
+.rightcol[
+
+Renders as:
+
+  **Option 1**<br>
+  <img src='images/gala.jpg' width=100><br>
+  **Type**: Gala<br>
+  **Price**: $ 1 / lb
+
+]
+
+---
+
+### 5. Create the options for each choice question
+
+Now make the options for each question
+
+
+``` r
+cbc1_options &lt;- make_cbc_options(df |&gt; filter(qID == 1))
+cbc2_options &lt;- make_cbc_options(df |&gt; filter(qID == 2))
+cbc3_options &lt;- make_cbc_options(df |&gt; filter(qID == 3))
+cbc4_options &lt;- make_cbc_options(df |&gt; filter(qID == 4))
+cbc5_options &lt;- make_cbc_options(df |&gt; filter(qID == 5))
+cbc6_options &lt;- make_cbc_options(df |&gt; filter(qID == 6))
+```
+
+---
+
+### 6. Create each choice question (6 in total)
+
+.leftcol[
+
+Code:
+
+
+``` r
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q1',
+  label  = "(1 of 6) If these were your only options, which would you choose?",
+  option = cbc1_options
+)
+```
+
+]
+
+.rightcol[
+
+Renders as:
+
+&lt;center&gt;
+&lt;img src="images/example.png" width=100%&gt;
+&lt;/center&gt;
 
 ]
 
@@ -1401,26 +1611,26 @@ kable(t(alts))
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Fuel Economy (mpg): &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 20 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Accel. Time (s): &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1429,21 +1639,9 @@ kable(t(alts))
 
 ---
 
-class: center 
-
-## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint) repo
-
-(code used in the related [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/))
-
-&lt;center&gt;
-&lt;img src="images/demo-repo.png" width=600&gt;
-&lt;/center&gt;
-
----
-
 class: inverse
 
-<div class="countdown" id="timer_36eb41a9" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_3cba19fd" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1465,7 +1663,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_5c589894" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_46f87a10" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
