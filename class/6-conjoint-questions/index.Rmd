@@ -769,39 +769,43 @@ Renders as:
 
 ---
 
-## .center[Show options in a table with `kable()`]
-
-.leftcol[
+## .center[Option: Show options in a table with `kable()`]
 
 ```{r}
 library(dplyr)
 
-alts <- jsonlite::unserializeJSON(df_json) %>%
-  # Add $ sign to price
-  mutate(price = scales::dollar(price)) %>% 
+alts <- df %>%
+  filter(qID == 1) %>% 
+  mutate(
+    # Add $ sign to price and html code for image path
+    price = paste(scales::dollar(price), "/ lb"),
+    image = paste0('<img src="', image, '" width=100>')) %>%
   # Make nicer attribute labels
   select(
-    `Option:`             = altID, 
-    `Powertrain:`         = powertrain,
-    `Price:`              = price, 
-    `Fuel Economy (mpg):` = fuelEconomy, 
-    `Accel. Time (s):`    = accelTime)
+    `Option:`    = altID,
+    ` `          = image,
+    `Price:`     = price,
+    `Type:`      = type,
+    `Freshness:` = freshness)
 
 # Drop row names
 row.names(alts) <- NULL
 ```
 
-]
+---
 
-.rightcol[
+## .center[Option: Show options in a table with `kable()`]
 
 Display the _transpose_, `t(alts)`
 
 ```{r}
-kable(t(alts))
+kbl(t(alts), escape = FALSE) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    position = "center"
+  )
 ```
-
-]
 
 ---
 
@@ -820,14 +824,13 @@ countdown(
 
 ## Your Turn
 
-.leftcol80[
+With your team, choose a format to work with (buttons or table) for your choice question, then modify the example survey to match your project.
 
-1. With your team, upload your `choice_questions.csv` file somewhere online (e.g. inside a formr run or on a GitHub repo).
-2. Edit the `p2-choice-questions.qmd` or `p2-choice-questions-table.qmd` file to implement your choice questions in RMarkdown.
+Survey versions:
 
-You should be able to render the file to visually test how one of your choice questions is rendering. 
+## Buttons: [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
 
-]
+## Table: [demo-choice-based-conjoint-table](https://github.com/surveydown-dev/demo-choice-based-conjoint-table/archive/refs/heads/main.zip)
 
 ---
 
