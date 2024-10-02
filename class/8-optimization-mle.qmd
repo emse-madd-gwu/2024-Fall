@@ -7,8 +7,9 @@ execute:
   message: false
 params:
   class: "8-optimization-mle"
-  logitrcars: TRUE
-  surveydown: TRUE
+  logitrcars: true
+  surveydown: true
+  notes: true
 ---
 
 ```{r child = here::here("fragments", "placeholder.qmd")}
