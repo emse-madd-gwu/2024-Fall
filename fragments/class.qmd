@@ -44,8 +44,8 @@ path_notes <- file.path(params$class, paste0(params$class, ".zip"))
 knitr::asis_output('<a href="https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip" class="btn-notes"><i class="fas fa-download"></i> logitr-cars</a>')
 ```
 
-```{r, eval=params$formr4conjoint, echo=FALSE}
-knitr::asis_output('<a href="https://github.com/jhelvy/formr4conjoint/archive/refs/heads/master.zip" class="btn-notes"><i class="fas fa-download"></i> formr4conjoint</a>')
+```{r, eval=params$surveydown, echo=FALSE}
+knitr::asis_output('<a href="https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip" class="btn-notes"><i class="fas fa-download"></i> surveydown</a>')
 ```
 
 :::

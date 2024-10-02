@@ -8,7 +8,7 @@ execute:
 params:
   class: "15-final-presentations"
   logitrcars: FALSE
-  formr4conjoint: FALSE
+  surveydown: FALSE
 ---
 
 ```{r child = here::here("fragments", "placeholder.qmd")}

@@ -769,7 +769,7 @@ Renders as:
 
 ---
 
-## .center[Option: Show options in a table with `kable()`]
+## .center[TABLE layout: Show options in a table with `kable()`]
 
 ```{r}
 library(dplyr)
@@ -811,7 +811,7 @@ kbl(t(alts), escape = FALSE) %>%
 
 class: center 
 
-## .center[Option: Show options in a table with `kable()`]
+## .center[TABLE layout: Show options in a table with `kable()`]
 
 Your choice question can be defined in the `survey.qmd`<br>file as it is just choosing one of three options:
 
@@ -838,152 +838,8 @@ countdown(
 
 With your team, choose a format to work with (buttons or table) for your choice question, then modify the example survey to match your project.
 
-Survey versions:
+## Versions:
 
-## Buttons: [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
+## Buttons layout: [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
 
-## Table: [demo-choice-based-conjoint-table](https://github.com/surveydown-dev/demo-choice-based-conjoint-table/archive/refs/heads/main.zip)
-
----
-
-class: inverse, center
-
-# .fancy[Break]
-
-```{r, echo=FALSE}
-countdown(
-    minutes   = 5,
-    left      = 0, right = 0, top = 1, bottom = 0,
-    margin    = "5%",
-    font_size = "8em"
-)
-```
-
----
-
-```{r child="topics/3.Rmd"}
-```
-
----
-
-# Your first few rows
-
-<br>
-
-### - Read `choice_questions.csv` from web
-### - Randomly choose a respondent ID
-### - Filter rows for that respondent ID
-### - Serialize the data frame to json format
-
----
-
-### Using the `calculate` type ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919))
-
-.leftcol[
-
-RMarkdown
-
-```{r, eval=FALSE}
-# Read in the choice questions
-library(tidyverse)
-design <- read_csv("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/choice_questions.csv")
-
-# Define the respondent ID
-respondentID <- sample(design$respID, 1)
-
-# Create the subset of rows for that respondent ID
-df <- design %>%
-    filter(respID == respondentID) %>%
-    mutate(image = paste0("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/", image))
-
-# Convert df to json
-df_json <- jsonlite::serializeJSON(df)
-```
-
-]
-
-.rightcol[
-
-Google sheet
-
-<center>
-<img src="images/calculate.png" width=100%>
-</center>
-
-]
-
----
-
-## Random choice questions as **buttons** ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit?usp=sharing))
-
-Use the `mc_button` question type
-
-.leftcol[
-
-### `label`
-
-- Show your question text
-- Insert a code chunk to create one-row data frame for each alternative
-
-### `choice` columns
-
-- Insert RMarkdown code to display each alternative
-
-]
-
-.rightcol[
-
-<center>
-<img src="images/cbc_buttons.png" width=100%>
-</center>
-
-]
-
----
-
-## Random choice questions as **table** ([example sheet](https://docs.google.com/spreadsheets/d/1EG14Eh9kDBvE_iETfm6l6g90mrQ5sl_zbWaXkwIOGLU/edit?usp=sharing))
-
-- Use the `mc_button` question type
-
-.leftcol[
-### `label`
-
-- Show your question text
-- Insert a code chunk to modify `alts` data frame & display it using `kable()`
-- Use [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Basic_HTML_table) to control table styling
-
-### `choice` columns
-
-- Simple text / number for each option
-
-]
-
-.rightcol[
-
-<center>
-<img src="images/cbc_table.png" width=100%>
-</center>
-
-]
-
----
-
-class: inverse
-
-## Your Turn
-
-1. Discuss the layout you would prefer to implement for your choice questions (buttons or table). 
-
-2. Make a Google Sheet using your team Google account to start implementing your conjoint questions.
-
-.leftcol[.center[
-
-## [buttons example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit?usp=sharing)
-
-]]
-
-.rightcol[.center[
-
-## [table example sheet](https://docs.google.com/spreadsheets/d/1EG14Eh9kDBvE_iETfm6l6g90mrQ5sl_zbWaXkwIOGLU/edit?usp=sharing)
-
-]]
+## Table layout: [demo-choice-based-conjoint-table](https://github.com/surveydown-dev/demo-choice-based-conjoint-table/archive/refs/heads/main.zip)
