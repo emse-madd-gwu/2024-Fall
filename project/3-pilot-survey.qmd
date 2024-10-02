@@ -46,13 +46,14 @@ The files included in the zip file are just example content based on the [blog p
 Follow these guidelines in inserting your content:
 
 - You may directly copy and paste any content you wish from your [Survey Plan](https://madd.seas.gwu.edu/2024-Fall/project/2-survey-plan.html) assignment.
-- In your `survey.qmd` file, you should include at least one example choice question (e.g. the first choice question for the first respondent) using your choice question design file (the `choice_questions.csv` file).
+- In your `survey.qmd` file, you should have your randomized sets of choice questions working using your `choice_questions.csv` design file.
+- Setup a [database connection](https://surveydown.org/store-data) on Supabase and make sure your survey data is being stored properly in the database.
 
-> Be sure to render your `survey.qmd` file often to an html file so you can preview that everything is displaying as expected, then also run the `app.R` file to preview your choice questions in the Shiny app.
+> Be sure to render your `survey.qmd` file often to an html file so you can preview that everything is displaying as expected, then also run the `app.R` file to preview your choice questions locally as a Shiny app.
 
 # 3. Upload your survey to shinyapps.io
 
-Only one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation for both [creating a database on Supabase](https://surveydown.org/store-data) to store your survey results data and [deploying the app](https://surveydown.org/deployment) on shinyapps.io.
+Only one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on [deploying the app](https://surveydown.org/deployment).
 
 # 4. Attribution
 
