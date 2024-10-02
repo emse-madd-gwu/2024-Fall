@@ -8,7 +8,7 @@ execute:
 params:
   class: "12-heterogeneity"
   logitrcars: TRUE
-  formr4conjoint: FALSE
+  surveydown: FALSE
 ---
 
 ```{r child = here::here("fragments", "placeholder.qmd")}

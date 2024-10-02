@@ -8,7 +8,7 @@ execute:
 params:
   class: "4-intro-to-surveydown"
   logitrcars: FALSE
-  formr4conjoint: FALSE
+  surveydown: FALSE
 ---
 
 ```{r child = here::here("fragments", "class.qmd")}

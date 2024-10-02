@@ -8,7 +8,7 @@ execute:
 params:
   class: "3-quarto-plotting"
   logitrcars: FALSE
-  formr4conjoint: FALSE
+  surveydown: FALSE
 ---
 
 ```{r child = here::here("fragments", "class.qmd")}
