@@ -7,8 +7,9 @@ execute:
   message: false
 params:
   class: "4-intro-to-surveydown"
-  logitrcars: FALSE
-  surveydown: FALSE
+  logitrcars: false
+  surveydown: true
+  notes: true
 ---
 
 ```{r child = here::here("fragments", "class.qmd")}
