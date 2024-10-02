@@ -809,6 +809,18 @@ kbl(t(alts), escape = FALSE) %>%
 
 ---
 
+class: center 
+
+## .center[Option: Show options in a table with `kable()`]
+
+Your choice question can be defined in the `survey.qmd`<br>file as it is just choosing one of three options:
+
+<center>
+<img src="images/example-table.png" width=550>
+</center>
+
+---
+
 class: inverse
 
 ```{r, echo=FALSE}
