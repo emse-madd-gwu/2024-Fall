@@ -25,41 +25,6 @@ output:
 
 ---
 
-class: inverse
-
-# Quiz 2
-
-```{r, echo=FALSE}
-countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    bottom = 0,
-    left = 0,
-    font_size = '4em'
-)
-```
-
-.leftcol[
-
-### Download the template from the #class channel
-
-### Make sure you unzip it!
-
-### When done, submit your `quiz2.qmd` on Blackboard
-
-]
-
-.rightcol[
-
-<center>
-<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
-</center>
-
-]
-
----
-
 ```{r child="topics/0.Rmd"}
 ```
 
@@ -238,10 +203,7 @@ tibble(
   `Bar 2` = c("$1.50", "60%", "Lindt"),
   `Bar 3` = c("$3.00", "80%", "Ghirardelli"),
 ) %>%
-  kable() %>% 
-  kable_styling(
-      bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+  kable()
 ```
 
 ]
@@ -291,10 +253,7 @@ tibble(
   `Bar 2` = c("$1.50", "60%", "Lindt"),
   `Bar 3` = c("$3.00", "80%", "Ghirardelli"),
 ) %>%
-  kable() %>% 
-  kable_styling(
-      bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+  kable()
 ```
 
 
@@ -309,13 +268,9 @@ b) What price would Bar 2 have to be to get a 50% market share?
 
 ---
 
-class: center 
+class: center, middle
 
-## Download the [logitr-cars](https://github.com/emse-madd-gwu/logitr-cars) repo from GitHub
-
-<center>
-<img src="images/logitr-cars.png" width=900>
-</center>
+## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip) repo from GitHub
 
 ---
 

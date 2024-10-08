@@ -14,14 +14,12 @@ files1 <- c(
 )
 
 files2 <- c(
-    '2-data-wrangling.Rproj',
     'data',
     'practice-solutions.R',
     'practice.R'
 )
 
 files3 <- c(
-    '3-quarto-plotting.Rproj',
     'bears_solutions.qmd',
     'bears.qmd',
     'data',
@@ -36,10 +34,15 @@ files4 <- c(
     'practiceSurvey'
 )
 
-files <- files4
+files7 <- c(
+    'data',
+    'simulate-choices.R',
+    'practice-solutions.qmd',
+    'practice.qmd'
+)
 
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = files
+    files = files7
 )
