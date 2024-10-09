@@ -14,12 +14,14 @@ files1 <- c(
 )
 
 files2 <- c(
+    '2-data-wrangling.Rproj',
     'data',
     'practice-solutions.R',
     'practice.R'
 )
 
 files3 <- c(
+    '3-quarto-plotting.Rproj',
     'bears_solutions.qmd',
     'bears.qmd',
     'data',
@@ -35,6 +37,7 @@ files4 <- c(
 )
 
 files7 <- c(
+    '7-utility-models.Rproj',
     'data',
     'simulate-choices.R',
     'practice-solutions.qmd',
