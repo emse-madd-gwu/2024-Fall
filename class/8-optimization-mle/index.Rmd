@@ -76,6 +76,16 @@ countdown(
 
 ---
 
+## Download & unzip two repos:
+
+## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip)
+
+## - [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
+
+(code used in the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on conjoint in surveydown)
+
+---
+
 background-color: #EEEDEE
 
 ## .center[Computing the likelihood]
@@ -299,10 +309,6 @@ Using the starting point $\underline{x}_0 = [1, 1]$ and the step size $\gamma = 
 class: center
 
 ## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo from GitHub
-
-<center>
-<img src="images/logitr-cars.png" width=900>
-</center>
 
 ---
 
@@ -672,21 +678,17 @@ glimpse(wildlife_impacts2)
 
 class: center
 
-## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
-
-<center>
-<img src="images/formr4conjoint.png" width=900>
-</center>
+## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip) repo
 
 ---
 
-# .center[Cleaning formr survey data]
+# .center[Cleaning surveydown survey data]
 
 <br>
 
 .rightcol80[
 
-## 1. Open `formr4conjoint.Rproj`
+## 1. Open `survey.Rproj`
 
 ## 2. Open `code/data_cleaning.R`
 
