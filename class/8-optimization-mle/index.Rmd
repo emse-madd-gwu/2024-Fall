@@ -76,16 +76,6 @@ countdown(
 
 ---
 
-## Download & unzip two repos:
-
-## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip)
-
-## - [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip)
-
-(code used in the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on conjoint in surveydown)
-
----
-
 background-color: #EEEDEE
 
 ## .center[Computing the likelihood]
@@ -306,9 +296,9 @@ Using the starting point $\underline{x}_0 = [1, 1]$ and the step size $\gamma = 
 
 ---
 
-class: center
+class: center, middle
 
-## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo from GitHub
+## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip) repo from GitHub
 
 ---
 
@@ -676,7 +666,7 @@ glimpse(wildlife_impacts2)
 
 ---
 
-class: center
+class: center, middle
 
 ## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip) repo
 
