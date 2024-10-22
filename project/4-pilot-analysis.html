@@ -329,7 +329,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pilot-data-analysis" id="toc-pilot-data-analysis" class="nav-link active" data-scroll-target="#pilot-data-analysis">2. Pilot Data Analysis</a></li>
+  <li><a href="#report-guidelines" id="toc-report-guidelines" class="nav-link active" data-scroll-target="#report-guidelines">1. Report Guidelines</a></li>
+  <li><a href="#pilot-data-analysis" id="toc-pilot-data-analysis" class="nav-link" data-scroll-target="#pilot-data-analysis">2. Pilot Data Analysis</a></li>
   <li><a href="#pilot-analysis-report" id="toc-pilot-analysis-report" class="nav-link" data-scroll-target="#pilot-analysis-report">3. Pilot Analysis Report</a>
   <ul class="collapse">
   <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
@@ -379,7 +380,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A detailed description of the results from analyzing your pilot survey data.</li>
 <li>A detailed description of planned changes you will include in your final survey.</li>
 </ul>
-<p>Follow the guidelines below to prepare your analysis and report. # 1. Report Guidelines</p>
+<p>Follow the guidelines below to prepare your analysis and report.</p>
+<section id="report-guidelines" class="level1">
+<h1>1. Report Guidelines</h1>
 <p>Download and unzip <a href="../templates/pilot-analysis.zip">this template</a> for your report. You should write your report in the <code>report.qmd</code> file. The template comes with some text and code explaining how to use it - you should delete this code &amp; text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:</p>
 <ul>
 <li>Write your project title in the <code>title</code> field (and provide a subtitle if you wish, or delete the <code>subtitle</code> field).</li>
@@ -390,12 +393,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>spelling<span class="sc">::</span><span class="fu">spell_check_files</span>(<span class="st">"report.qmd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>All figures, tables, and equations should be referenced in the text.</p>
+</section>
 <section id="pilot-data-analysis" class="level1">
 <h1>2. Pilot Data Analysis</h1>
 <p>Before writing your report, you should first analyze your pilot data by following these steps:</p>
 <ol type="1">
-<li>Download the data files from formr.org for your surveys and put them in the “data” folder in the report template.</li>
-<li>Open the <code>clean-data.R</code> file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a “long” format similar to the <a href="https://github.com/jhelvy/formr4conjoint/blob/master/data/choiceData.csv">example choice data here</a>.</li>
+<li>Download the survey response data from your Supabase account. You can import the data directly using the <code>sd_get_data()</code> function (see the <a href="https://surveydown.org/fetch-data">documentation page</a> for details). Save the raw data in the “data” folder in the report template.</li>
+<li>Open the <code>clean-data.R</code> file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a “long” format similar to the <a href="https://github.com/surveydown-dev/demo-choice-based-conjoint/blob/main/data/choiceData.csv">example choice data here</a>.</li>
 <li>Save your cleaned data file as a .csv file in the “data” folder.</li>
 <li>Open the <code>modeling.R</code> file and write code to estimate preliminary models using your cleaned choice data.</li>
 <li>Open the <code>power-analysis.R</code> file and write code to conduct a power analysis to inform the sample size requirements for your final survey.</li>

@@ -35,6 +35,7 @@ Your report should include three main components:
 - A detailed description of planned changes you will include in your final survey.
 
 Follow the guidelines below to prepare your analysis and report.
+
 # 1. Report Guidelines
 
 Download and unzip [this template](../templates/pilot-analysis.zip) for your report. You should write your report in the `report.qmd` file. The template comes with some text and code explaining how to use it - you should delete this code & text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:
@@ -57,8 +58,8 @@ All figures, tables, and equations should be referenced in the text.
 
 Before writing your report, you should first analyze your pilot data by following these steps:
 
-1. Download the data files from formr.org for your surveys and put them in the "data" folder in the report template.
-2. Open the `clean-data.R` file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a "long" format similar to the [example choice data here](https://github.com/jhelvy/formr4conjoint/blob/master/data/choiceData.csv).
+1. Download the survey response data from your Supabase account. You can import the data directly using the `sd_get_data()` function (see the [documentation page](https://surveydown.org/fetch-data) for details). Save the raw data in the "data" folder in the report template.
+2. Open the `clean-data.R` file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a "long" format similar to the [example choice data here](https://github.com/surveydown-dev/demo-choice-based-conjoint/blob/main/data/choiceData.csv).
 3. Save your cleaned data file as a .csv file in the "data" folder.
 4. Open the `modeling.R` file and write code to estimate preliminary models using your cleaned choice data.
 5. Open the `power-analysis.R` file and write code to conduct a power analysis to inform the sample size requirements for your final survey.
