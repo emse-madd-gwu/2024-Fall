@@ -38,9 +38,9 @@ lotr_words <- read_csv(here('data', 'lotr_words.csv'))
 
 ---
 
-# [Pilot Analysis Report](https://madd.seas.gwu.edu/2023-Fall/project/4-pilot-analysis.html)
+# [Pilot Analysis Report](https://madd.seas.gwu.edu/2024-Fall/project/4-pilot-analysis.html)
 
-### Due 11/05 (that's 10 days from now)
+### Due 11/03 (that's 10 days from now)
 
 ---
 
@@ -244,13 +244,9 @@ $$
 
 ---
 
-class: center
+class: center, middle
 
-## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo from GitHub
-
-<center>
-<img src="images/logitr-cars.png" width=900>
-</center>
+## Download the [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip) repo from GitHub
 
 ---
 
@@ -626,23 +622,19 @@ countdown(
 
 ---
 
-class: center
+class: center, middle
 
-## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
-
-<center>
-<img src="images/formr4conjoint.png" width=900>
-</center>
+## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip) repo
 
 ---
 
-# .center[Cleaning formr survey data]
+# .center[Cleaning surveydown survey data]
 
 <br>
 
 .rightcol80[
 
-## 1. Open `formr4conjoint.Rproj`
+## 1. Open `survey.Rproj`
 
 ## 2. Open `code/data_cleaning.R`
 
@@ -680,7 +672,7 @@ countdown(
 
 .rightcol80[
 
-## 1. Open `formr4conjoint.Rproj`
+## 1. Open `survey.Rproj`
 
 ## 2. Open `code/modeling.R`
 
@@ -695,4 +687,4 @@ class: inverse
 ## As a team:
 
 1. Use your `choiceData` data frame to estimate preliminary choice models.  
-2. Interpret your model coefficients with uncertainty.
+2. Interpret your model coefficients **with uncertainty**.

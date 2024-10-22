@@ -51,8 +51,15 @@ files8 <- c(
     'practice.qmd'
 )
 
+files9 <- c(
+    '9-uncertainty.Rproj',
+    'data',
+    'practice-solutions.qmd',
+    'practice.qmd'
+)
+
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = files8
+    files = files9
 )
