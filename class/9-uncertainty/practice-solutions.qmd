@@ -132,7 +132,7 @@ mean(draws[, 3])
 quantile(draws[, 3], c(0.025, 0.975))
 
 # Solution using the class package ci() function:
-maddTools::ci(draws, ci = 0.95)
+logitr::ci(draws, level = 0.95)
 ```
 
 
