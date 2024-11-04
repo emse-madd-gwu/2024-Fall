@@ -4,7 +4,7 @@
     <title>WTP &amp; Simulations</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Paul Helveston" />
-    <meta name="date" content="2022-11-08" />
+    <meta name="date" content="2024-11-06" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -60,7 +60,7 @@ class: middle, inverse
 
 ### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg> EMSE 6035: Marketing Analytics for Design Decisions
 ### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg> John Paul Helveston
-### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg> November 08, 2022
+### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg> November 06, 2024
 
 ]
 
@@ -116,7 +116,7 @@ class: center
 
 class: center
 
-# Notational convention
+# Notational convention: hats mean "estimated"
 
 .leftcol[
 
@@ -187,7 +187,7 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 .leftcol[
 
 
-```r
+``` r
 beta &lt;- c(-0.7, 0.1, -4.0)
 
 hessian &lt;- matrix(c(
@@ -202,7 +202,7 @@ hessian &lt;- matrix(c(
 .rightcol[
 
 
-```r
+``` r
 covariance &lt;- -1*solve(hessian)
 draws &lt;- MASS::mvrnorm(10^4, beta, covariance)
 
@@ -211,12 +211,12 @@ head(draws)
 
 ```
 #&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.6952607 0.13640663 -4.021549
-#&gt; [2,] -0.7193316 0.13093750 -3.844448
-#&gt; [3,] -0.6848580 0.09395454 -3.986473
-#&gt; [4,] -0.6948808 0.06480716 -4.067523
-#&gt; [5,] -0.7128530 0.18258654 -4.000395
-#&gt; [6,] -0.7055700 0.14353159 -4.066792
+#&gt; [1,] -0.7122001 0.03134944 -3.931410
+#&gt; [2,] -0.7079441 0.08135420 -4.071759
+#&gt; [3,] -0.7047895 0.19840946 -3.979393
+#&gt; [4,] -0.6951060 0.04542387 -3.939195
+#&gt; [5,] -0.6836715 0.14169655 -4.033624
+#&gt; [6,] -0.6833292 0.08902386 -4.183527
 ```
 
 ]
@@ -232,7 +232,7 @@ head(draws)
 .leftcol55[
 
 
-```r
+``` r
 draws_other &lt;- draws[,2:ncol(draws)]
 draws_price &lt;- draws[,1]
 draws_wtp &lt;- draws_other / (-1*draws_price)
@@ -241,12 +241,12 @@ head(draws_wtp)
 
 ```
 #&gt;            [,1]      [,2]
-#&gt; [1,] 0.19619493 -5.784231
-#&gt; [2,] 0.18202662 -5.344472
-#&gt; [3,] 0.13718834 -5.820875
-#&gt; [4,] 0.09326371 -5.853555
-#&gt; [5,] 0.25613490 -5.611809
-#&gt; [6,] 0.20342643 -5.763839
+#&gt; [1,] 0.04401775 -5.520092
+#&gt; [2,] 0.11491613 -5.751526
+#&gt; [3,] 0.28151590 -5.646214
+#&gt; [4,] 0.06534812 -5.667043
+#&gt; [5,] 0.20725824 -5.899944
+#&gt; [6,] 0.13027961 -6.122272
 ```
 
 ]
@@ -258,14 +258,14 @@ head(draws_wtp)
 Mean WTP with confidence interal
 
 
-```r
+``` r
 logitr::ci(draws_wtp)
 ```
 
 ```
 #&gt;         mean       lower      upper
-#&gt; 1  0.1429359  0.03776162  0.2516029
-#&gt; 2 -5.7150021 -5.98184669 -5.4612197
+#&gt; 1  0.1436555  0.03647551  0.2513887
+#&gt; 2 -5.7147653 -5.97513653 -5.4625371
 ```
 
 ]
@@ -329,7 +329,7 @@ b) Use the draws to compute the mean WTP and 95% confidence intervals of WTP for
 
 class: inverse
 
-<div class="countdown" id="timer_eab996d8" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_a4b5568b" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -423,7 +423,7 @@ class: center
 
 class: inverse
 
-<div class="countdown" id="timer_15a0fd39" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_9b6a95ad" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -444,7 +444,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_4b53a9bb" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_8ef544c4" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -516,7 +516,7 @@ background-color: #EEEDEE
 In R:
 
 
-```r
+``` r
 X %*% beta
 ```
 
@@ -568,7 +568,7 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 .leftcol[
 
 
-```r
+``` r
 beta &lt;- c(-0.7, 0.1, -4.0)
 
 hessian &lt;- matrix(c(
@@ -583,7 +583,7 @@ hessian &lt;- matrix(c(
 .rightcol[
 
 
-```r
+``` r
 covariance &lt;- -1*solve(hessian)
 draws &lt;- MASS::mvrnorm(10^4, beta, covariance)
 
@@ -592,12 +592,12 @@ head(draws)
 
 ```
 #&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.6954732 0.13169817 -3.976132
-#&gt; [2,] -0.7029691 0.12444788 -4.004957
-#&gt; [3,] -0.7261536 0.15741668 -4.127974
-#&gt; [4,] -0.6867862 0.19197337 -3.897932
-#&gt; [5,] -0.6866717 0.17024995 -4.087407
-#&gt; [6,] -0.6859331 0.09267376 -4.041047
+#&gt; [1,] -0.6925500 0.08403549 -3.887939
+#&gt; [2,] -0.7346475 0.07683155 -3.924278
+#&gt; [3,] -0.7086096 0.12060448 -4.008604
+#&gt; [4,] -0.7029808 0.03122689 -4.030174
+#&gt; [5,] -0.6783486 0.16033117 -4.054342
+#&gt; [6,] -0.6967758 0.10656079 -3.939125
 ```
 
 ]
@@ -632,7 +632,7 @@ Internally, it:
 
 class: inverse
 
-<div class="countdown" id="timer_0382ab54" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_25dbca96" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
