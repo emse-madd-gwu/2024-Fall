@@ -70,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- fontawesome icons -->
+<script src="https://kit.fontawesome.com/1392a7030f.js" crossorigin="anonymous"></script>
+
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -313,9 +317,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon!</p>
+<blockquote class="blockquote">
+<p><strong>Due</strong>: Nov 18 by 11:59pm</p>
+<p><strong>Weight</strong>: This assignment is worth 3% of your final grade.</p>
+<p><strong>Purpose</strong>: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.</p>
+<p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
+<ul>
+<li>✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.</li>
+<li>✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.</li>
+<li>✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will <em>hopefully</em> not assign these often.</li>
+</ul>
+<p>Notice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is <strong>not enough</strong>. Write at least a paragraph and show me that you did the readings assigned.</p>
+</blockquote>
+<section id="get-organized" class="level1">
+<h1>1. Get Organized</h1>
+<p>Follow these instructions:</p>
+<ol type="1">
+<li>Download and edit <a href="https://madd.seas.gwu.edu/2024-Fall/templates/hw11.zip">this template</a>.</li>
+<li>Unzip the template folder. <strong>Make sure you actually unzip it</strong>! (in Windows, right-click it and use “extract all”)</li>
+<li>Open the .Rproj file to open RStudio.</li>
+<li>Inside RStudio, open the <code>hw11.qmd</code> file, take notes, and write some example code as you go through the readings / exercises below.</li>
+</ol>
+</section>
+<section id="readings" class="level1">
+<h1>2. Readings</h1>
+<p>This is your last homework! Okay, well not really - your homework next week will be a take home exam. But don’t worry, we will spend our time in class next week going over the entire class, so there will be time to get answers to any questions you have.</p>
+<p>For this week, the only thing you will look over is the concept of a <em>sensitivity analysis</em>. Last week in class we covered how to use our estimated logit model to conduct a market simulation, which gave us predicted market shares for different products. Naturally, one of the key things we might want to know is how sensitive our predicted market shares are to changes in our attributes.</p>
+<p>To understand how we calculate such sensitivities, take a look at the <a href="https://github.com/jhelvy/logitr-cars">logitr-cars</a> repo. Download the repo using <a href="https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip">this link</a>, then open the R project file to open RStudio. Then in RStudio, open the following two files:</p>
+<ul>
+<li><code>9.1-compute-sensitivity.R</code></li>
+<li><code>9.2-plot-sensitivity.R</code></li>
+</ul>
+<p>Your job this week is to go through each of these files line-by-line to make sure you understand what is being done. (It might also help to look back at some of the earlier files we covered as a refresher, such as 3.1 on estimating models or 5.1 on uncertainty).</p>
+<p>Let’s start with the first file, 9.1. In this file, we use the <code>predict()</code> function to compute market shares for different markets.</p>
+<p>In the first sensitivity analysis, we define a <code>baseline</code> market, then we create repeated copies of this market but with incremental changes to the price of alternative 2. When we use <code>predict()</code>, we get predicted probabilities for each market, which we can then use to see how the predicted probability for alternative 2 changes with price.</p>
+<p>In the second sensitivity analysis, we also start with repeated copies of our <code>baseline</code> market, but then we substitute in a series of different cases where we change the values of other attributes. Each case has a “low” and “high” value, where “high” means they result in expected higher market shares, and “low” means the opposite. Again, we use <code>predict()</code> to obtain predicted market shares for each scenario.</p>
+<p>At the bottom of the script, we save the data frames.</p>
+<p>In 9.2, we use the saved results to visualize the results computed in 9.1. This code shows us how to create line plots of the predicted market share versus price as well as revenue versus price. The third chart is a “tornado” plot, which shows us the predicted market share for each of the “high” and “low” conditions in 9.1.</p>
+<p>These charts – sensitivity to price, and sensitivity to changes in other attributes – will be important charts to include in your final analysis report. You can use these examples to help you create similar charts for your project.</p>
+<p>Once you have gone through each file, consider what might make a good “baseline” market for your project, then write your reflection.</p>
+</section>
+<section id="reflect" class="level1">
+<h1>3. Reflect</h1>
+<p>Reflect on what you’ve learned while going through these exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your <code>hw11.qmd</code> file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.</p>
+<p>If you’re unsure where to start with a reflection, try filling out this template:</p>
+<blockquote class="blockquote">
+<p>“I used to think ______, now I think ______ 🤔”</p>
+</blockquote>
+</section>
+<section id="submit" class="level1">
+<h1>4. Submit</h1>
+<p>To submit your assignment, follow these instructions:</p>
+<ol type="1">
+<li>Render your .qmd file by either clicking the “Render” button in RStudio or running the command <code>quarto::quarto_render("hw11.qmd")</code> command.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
