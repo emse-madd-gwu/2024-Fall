@@ -4,7 +4,7 @@
     <title>Class Review</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Paul Helveston" />
-    <meta name="date" content="2023-11-29" />
+    <meta name="date" content="2024-11-20" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -62,7 +62,7 @@ class: middle, inverse
 
 ### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg> EMSE 6035: Marketing Analytics for Design Decisions
 ### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg> John Paul Helveston
-### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg> November 29, 2023
+### <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg> November 20, 2024
 
 ]
 
@@ -188,14 +188,14 @@ class: inverse, middle, center
 ## 1. Create a path to the data
 
 
-```r
+``` r
 library(here)
 *path_to_data &lt;- here('data', 'data.csv')
 path_to_data
 ```
 
 ```
-#&gt; [1] "/Users/jhelvy/gh/teaching/MADD/2023-Fall/class/13-class-review/data/data.csv"
+#&gt; [1] "/Users/jhelvy/gh/teaching/MADD/2024-Fall/class/13-class-review/data/data.csv"
 ```
 
 --
@@ -203,7 +203,7 @@ path_to_data
 ## 2. Import the data
 
 
-```r
+``` r
 library(tidyverse)
 *data &lt;- read_csv(path_to_data)
 ```
@@ -213,7 +213,7 @@ library(tidyverse)
 # Steps to importing external data files
 
 
-```r
+``` r
 library(tidyverse)
 
 data &lt;- read_csv(here::here('data', 'data.csv'))
@@ -237,7 +237,7 @@ data &lt;- read_csv(here::here('data', 'data.csv'))
 # Example data frame
 
 
-```r
+``` r
 beatles &lt;- tibble(
     firstName   = c("John", "Paul", "Ringo", "George"),
     lastName    = c("Lennon", "McCartney", "Starr", "Harrison"),
@@ -266,7 +266,7 @@ beatles
 Get the **first &amp; last name** of members born after 1941 &amp; are still living
 
 
-```r
+``` r
 beatles %&gt;% 
   filter(yearOfBirth &gt; 1941, deceased == FALSE) %&gt;% 
   select(firstName, lastName)
@@ -286,7 +286,7 @@ beatles %&gt;%
 Use the `yearOfBirth` variable to compute the age of each band member
 
 
-```r
+``` r
 beatles %&gt;%
     mutate(age = 2022 - yearOfBirth) %&gt;%
     arrange(age)
@@ -309,7 +309,7 @@ beatles %&gt;%
 ### .center[`ifelse(&lt;condition&gt;, &lt;if TRUE&gt;, &lt;else&gt;)`]
 
 
-```r
+``` r
 beatles %&gt;%
     mutate(playsGuitar = ifelse(instrument == "guitar", TRUE, FALSE))
 ```
@@ -417,7 +417,7 @@ class: center
 Data frame with one variable: _brand_
 
 
-```r
+``` r
 data &lt;- data.frame(
     brand = c("Ford", "GM", "BMW"))
 
@@ -440,7 +440,7 @@ data
 Add dummy columns for each brand
 
 
-```r
+``` r
 library(fastDummies)
 
 dummy_cols(data, "brand")
@@ -468,7 +468,7 @@ dummy_cols(data, "brand")
 ]
 
 
-```r
+``` r
 model &lt;- logitr(
     data   = data,
     choice = "choice",
@@ -498,7 +498,7 @@ Coef. | Interpretation
 ]
 
 
-```r
+``` r
 model &lt;- logitr(
     data   = data,
     choice = "choice",
@@ -538,7 +538,7 @@ Coef. | Interpretation
 
 All discrete (dummy-code) variables 
 
-```r
+``` r
 pars = c(
   "price_20", "price_25",
   "fuelEconomy_25", "fuelEconomy_30",
@@ -563,7 +563,7 @@ Reference Levels:
 
 All continuous (linear), except for `powertrain_Electric` 
 
-```r
+``` r
 pars = c(
   'price', 'fuelEconomy', 'accelTime', 
   'powertrain_Electric')
@@ -602,7 +602,7 @@ Parameter | Coefficient
 
 What are the expected probabilities of choosing each of these bars using a logit model? 
 
-&lt;table class="table table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;table class="table table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt; Attribute &lt;/th&gt;
@@ -832,7 +832,7 @@ class: middle, center
 ## In-class example
 
 
-```r
+``` r
 # 1. Get coefficients
 beta &lt;- c(
     price = -0.7, mpg = 0.1, elec = -4.0)
@@ -854,7 +854,7 @@ covariance &lt;- -1*solve(hessian)
 ## Model from `logitr`
 
 
-```r
+``` r
 beta &lt;- coef(model)
 covariance &lt;- vcov(model)
 ```
@@ -984,7 +984,7 @@ class: center
 .leftcol55[
 
 
-```r
+``` r
 draws_other &lt;- draws[,2:ncol(draws)]
 draws_price &lt;- draws[,1]
 draws_wtp &lt;- draws_other / (-1*draws_price)
@@ -993,12 +993,12 @@ head(draws_wtp)
 
 ```
 #&gt;            [,1]      [,2]
-#&gt; [1,] 0.08156866 -5.771992
-#&gt; [2,] 0.10238910 -5.875931
-#&gt; [3,] 0.12643049 -5.841146
-#&gt; [4,] 0.10726155 -5.991838
-#&gt; [5,] 0.18738947 -5.695868
-#&gt; [6,] 0.14457267 -6.010809
+#&gt; [1,] 0.07398472 -5.701976
+#&gt; [2,] 0.19296318 -5.598626
+#&gt; [3,] 0.07840398 -5.669387
+#&gt; [4,] 0.12851512 -5.578834
+#&gt; [5,] 0.16320950 -5.746459
+#&gt; [6,] 0.16290096 -5.798356
 ```
 
 ]
@@ -1007,14 +1007,14 @@ head(draws_wtp)
 
 Mean WTP with confidence interval
 
-```r
+``` r
 logitr::ci(draws_wtp)
 ```
 
 ```
 #&gt;         mean       lower      upper
-#&gt; 1  0.1427314  0.03787149  0.2493893
-#&gt; 2 -5.7167653 -5.98211335 -5.4602922
+#&gt; 1  0.1431095  0.03725645  0.2484034
+#&gt; 2 -5.7150981 -5.97440619 -5.4641368
 ```
 
 ]
@@ -1101,7 +1101,7 @@ background-color: #EEEDEE
 
 In R:
 
-```r
+``` r
 X %*% beta
 ```
 
@@ -1131,7 +1131,7 @@ class: inverse, center
 
 # .fancy[Break]
 
-<div class="countdown" id="timer_cb279d72" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_5c46c3da" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1246,7 +1246,7 @@ class: inverse, middle
 
 class: inverse
 
-<div class="countdown" id="timer_0e923349" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_964e92d4" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
