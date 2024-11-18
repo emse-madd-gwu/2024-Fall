@@ -80,8 +80,14 @@ files12 <- c(
     'practice.qmd'
 )
 
+files13 <- c(
+    '13-class-review.Rproj',
+    'practice-solutions.qmd',
+    'practice.qmd'
+)
+
 # Create zip files of class notes
 zip::zip(
     zipfile = paste0(lesson, ".zip"),
-    files = files12
+    files = files13
 )

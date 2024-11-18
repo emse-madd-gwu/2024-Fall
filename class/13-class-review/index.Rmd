@@ -64,7 +64,7 @@ class: middle
 
 # Final Presentation 
 
-## - In class, 12/11 (5:30 - 7:00)
+## - In class, 12/11 (6:10 - 8:40)
 
 --
 
@@ -109,7 +109,7 @@ class: middle
 
 ## .center[Things I'm **not** covering]
 
-- formr.org
+- surveydown
 - Mixed logit
 
 ]
@@ -475,7 +475,9 @@ tibble(
   kable() %>% 
   kable_styling(
       bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+      full_width = FALSE
+  ) %>% 
+  row_spec(0:3, color = "white")
 ```
 
 ]
