@@ -43,17 +43,17 @@ class: middle, inverse, center
 
 # Final Presentation 
 
-## - In class, 12/13 (6:10pm - 8:40pm)
+## - In class, 12/11 (6:10pm - 8:40pm)
 
 ## - 10 minutes (strict)
 
-## - Slides due in Blackboard by midnight on 12/12 (one team member submit)
+## - Slides due in Blackboard by midnight on 12/10 (one team member submit)
 
 ---
 
 class: middle, center
 
-# Download [this cheetsheet](https://github.com/emse-madd-gwu/2023-Fall/raw/main/content/cheatsheet-storytelling.pdf) for today's content
+# Download [this cheetsheet](https://github.com/emse-madd-gwu/2024-Fall/raw/main/content/cheatsheet-storytelling.pdf) for today's content
 
 ---
 
@@ -690,7 +690,7 @@ Afterwards, we will go around the room and one person from each team will practi
 
 ---
 
-# .center[[Final Analysis Reports](https://madd.seas.gwu.edu/2023-Fall/project/6-final-analysis.html) due 12/10<br>(you have 4 days left!)]
+# .center[[Final Analysis Reports](https://madd.seas.gwu.edu/2024-Fall/project/6-final-analysis.html) due 12/10<br>(you have 4 days left!)]
 
 --
 
@@ -714,9 +714,9 @@ spelling::spell_check_files("report.qmd")
 
 ---
 
-# .center[[Final Presentations](https://madd.seas.gwu.edu/2023-Fall/project/7-final-presentation.html) due 12/12]
+# .center[[Final Presentations](https://madd.seas.gwu.edu/2024-Fall/project/7-final-presentation.html) due 12/10]
 
 </br>
 
-- ### We'll watch these during class period on Dec 13
-- ### 5 projects x 10 mins each
+- ### We'll watch these during class period on Dec 11
+- ### 6 projects x 10 mins each

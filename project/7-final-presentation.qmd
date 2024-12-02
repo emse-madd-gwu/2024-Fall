@@ -43,7 +43,7 @@ Below is a list of specific items your presentation should include.
 - You may use as many slides as you feel helps you communicate your ideas (but keep the 10 minute limit in mind).
 - Your title slide should include the project title, team member names, and the presentation date: December 15, 2024.
 - All slides should be numbered in the bottom-left or bottom-right corners.
-- Review the slide design guidelines discussed in [class](https://madd.seas.gwu.edu/2024-Fall/class/15-communicating-results.html) as a check list when designing your slides.
+- Review the slide design guidelines discussed in [class](https://madd.seas.gwu.edu/2024-Fall/class/14-communicating-results.html) as a check list when designing your slides.
 
 # 2. Recording strategies
 
