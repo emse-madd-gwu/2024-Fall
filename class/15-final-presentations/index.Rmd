@@ -27,41 +27,49 @@ output:
 
 class: center, middle
 
-# [Solar Charging Phone Case](https://drive.google.com/file/d/1TnRcnq4f-bed-CVlEU-3bUEL8h8dLqkp/view?usp=sharing)
+# OptiSync: AI-Powered Smartphone Optimization
 
-## by Anh Nguyen, Elizabeth Pacious, Niveadita Razdan, and Avneet Singh
-
----
-
-class: center, middle
-
-# [ComposteRs](https://clipchamp.com/watch/L5k1rmAtabU)
-
-## by Eliese Ottinger, Raghav Bhan, Ashhwath Chandramohan, and Nandhini Devaraj
+## by Chaitanya Aggarwal, Deepansh Sharma, Chinmay Wayal, and Vishnu Gujula
 
 ---
 
 class: center, middle
 
-# Cooktop Preference Analysis
+# Health Tracker Device
 
-## by Hanna Song, Paul Derisemu, Tejas Phirke, and Zain Hoda
-
----
-
-class: center, middle
-
-# FutStat: The Soccer Training App
-
-## by Ayush Kala, Sumedh Joshi, Mansoor Ali, and Oscar Southwell
+## by Abdul Jaleel Marga, Ben Yimaj, Jade Haneef, and Katherine Sequera Dominguez
 
 ---
 
 class: center, middle
 
-# Smart Charging for PEVs
+# Helix analytics
 
-## by Pingfan Hu, Bharath Ravindra, Sampada Dhakal, and Vedanth Surendra Hegde
+## by Mehul Bhatt, Nisha Chauhan, and Aman Vazirani
+
+---
+
+class: center, middle
+
+# Mobile AI Functionality
+
+## by Taekwon Choi, Stephen Hilton, Bryce Huffman, Vidyullatha KS, and Faizan Mufti
+
+---
+
+class: center, middle
+
+# Scootistic DC
+
+## by Lola Nurullaeva, Sachi Nandurkar, Shubham Patil, Dhanyasri Bolla, and Harshal Dinesh Soni
+
+---
+
+class: center, middle
+
+# Team Water Bottle: A Report on Water Bottle Design Attributes and Their Market Implications
+
+## by Ben Buechner, Max Feng, Daniel Fisher, and Parker Reese
 
 ---
 
